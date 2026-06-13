@@ -27,8 +27,10 @@ st.markdown("""
     overflow: hidden;
 }
 .hero h1 {
-    font-size: 34px;
-    margin-bottom: 6px;
+    font-size: 36px;
+    margin-bottom: 8px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
 .hero p {
     margin: 4px 0;
