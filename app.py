@@ -14,11 +14,17 @@ st.markdown("""
     max-width: 760px;
 }
 .hero {
-    background: linear-gradient(135deg, #7A0019, #B00020);
+    position: relative;
     color: white;
-    padding: 30px 24px;
-    border-radius: 22px;
+    padding: 80px 24px 32px 24px;
+    border-radius: 24px;
     margin-bottom: 22px;
+    background-image:
+        linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.55)),
+        url("https://source.unsplash.com/1200x700/?bamboo,forest");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
 }
 .hero h1 {
     font-size: 34px;
