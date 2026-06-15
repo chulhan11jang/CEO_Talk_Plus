@@ -77,7 +77,8 @@ st.markdown("""
     <h3>프로그램 소개</h3>
     <p><b>CEO와 함께하는 Talk Plus, 소통에 의미를 더하다</b></p>
     <p class="small">
-    일상적인 업무 공간을 벗어나 CEO와 리더 간 직접적인 소통을 통해 조직의 방향성과 생각을 공유하는 자리
+    일상적인 업무 공간을 벗어나 CEO와 리더 간 직접적인 소통을 통해<br>
+    조직의 방향성과 생각을 공유하는 자리
     </p>
     <span class="tag">One Team</span>
     <span class="tag">Enable the Next</span>
