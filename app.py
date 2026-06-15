@@ -26,7 +26,7 @@ st.markdown("""
 }
 background-image:
     linear-gradient(rgba(0,0,0,0.20), rgba(0,0,0,0.58)),
-    url("https://raw.githubusercontent.com/chulhan11jang/CEO_Talk_Plus/main/bamboo.jpeg");
+    url("https://github.com/chulhan11jang/CEO_Talk_Plus/blob/main/bamboo.jpeg");
     background-size: cover;
     background-position: center;
     overflow: hidden;
