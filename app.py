@@ -136,13 +136,15 @@ st.markdown("""
 # =========================
 # Hero
 # =========================
-st.image("bamboo.jpeg", use_container_width=True)
-
 st.markdown("""
-<div class="hero">
-    <h1>CEO Talk Plus</h1>
-    <p>with 모빌리티솔루션</p>
-    <p>2026.06.18 · 담양 죽녹원</p>
+<div class="hero-img-wrap">
+    <img src="https://raw.githubusercontent.com/chulhan11jang/CEO_Talk_Plus/main/bamboo.jpeg">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+        <h1>CEO Talk Plus</h1>
+        <p>with 모빌리티솔루션</p>
+        <p>2026.06.18 · 담양 죽녹원</p>
+    </div>
 </div>
 """, unsafe_allow_html=True)
 
