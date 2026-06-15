@@ -75,7 +75,7 @@ st.markdown("""
 .info-value {
     font-weight: 800;
     font-size: 18px;
-    color: #A50020;
+    color: #1F2937;
     text-align: right;
 }
 
