@@ -17,25 +17,52 @@ st.markdown("""
     max-width: 760px;
 }
 
-.hero {
-    color: white;
-    padding: 28px 24px;
-    border-radius: 0 0 24px 24px;
-    margin-bottom: 22px;
-    background: linear-gradient(135deg, #5F5F5F, #2F2F2F);
+.hero-container {
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 24px;
+    overflow: hidden;
 }
 
-.hero h1 {
-    font-size: 38px;
-    margin-bottom: 10px;
+.hero-container img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0,0,0,0.10),
+        rgba(0,0,0,0.60)
+    );
+}
+
+.hero-text {
+    position: absolute;
+    left: 28px;
+    bottom: 30px;
+    color: white;
+}
+
+.hero-title {
+    font-size: 40px;
     font-weight: 800;
+    margin-bottom: 10px;
     letter-spacing: -0.5px;
 }
 
-.hero p {
-    margin: 6px 0;
-    font-size: 15px;
-    font-weight: 600;
+.hero-sub {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.hero-date {
+    font-size: 16px;
+    font-weight: 700;
 }
 
 .card {
@@ -137,14 +164,14 @@ st.markdown("""
 # Hero
 # =========================
 st.markdown("""
-<div class="hero-img-wrap">
-    <img src="https://raw.githubusercontent.com/chulhan11jang/CEO_Talk_Plus/main/bamboo.jpeg">
-    <div class="hero-overlay"></div>
-    <div class="hero-text">
-        <h1>CEO Talk Plus</h1>
-        <p>with 모빌리티솔루션</p>
-        <p>2026.06.18 · 담양 죽녹원</p>
-    </div>
+<div class="hero-container">
+<img src="https://raw.githubusercontent.com/chulhan11jang/CEO_Talk_Plus/main/bamboo.jpeg">
+<div class="hero-overlay"></div>
+<div class="hero-text">
+    <div class="hero-title">CEO Talk Plus</div>
+    <div class="hero-sub">with 모빌리티솔루션</div>
+    <div class="hero-date">2026.06.18 · 담양 죽녹원</div>
+</div>
 </div>
 """, unsafe_allow_html=True)
 
