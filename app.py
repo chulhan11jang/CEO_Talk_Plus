@@ -74,10 +74,10 @@ st.markdown("""
 
 st.markdown("""
 <div class="card">
-    <h3>Today's Message</h3>
+    <h3>프로그램 소개</h3>
     <p><b>CEO와 함께하는 Talk Plus, 소통에 의미를 더하다</b></p>
     <p class="small">
-    죽녹원 산책과 Activity, 석식을 통해 모빌리티솔루션 리더 간 소통과 One Team 분위기를 강화하는 시간입니다.
+    일상적인 업무 공간을 벗어나 CEO와 리더 간 직접적인 소통을 통해 조직의 방향성과 생각을 공유하는 자리
     </p>
     <span class="tag">One Team</span>
     <span class="tag">Enable the Next</span>
