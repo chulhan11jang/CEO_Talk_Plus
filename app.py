@@ -19,11 +19,10 @@ st.markdown("""
 
 .hero {
     color: white;
-    padding: 140px 24px 40px 24px;
+    padding: 82px 24px 34px 24px;
     border-radius: 24px;
     margin-bottom: 22px;
-    background-size: cover;
-    background-position: center;
+    ...
 }
 background-image:
     linear-gradient(rgba(0,0,0,0.20), rgba(0,0,0,0.58)),
