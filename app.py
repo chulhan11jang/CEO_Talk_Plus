@@ -22,9 +22,9 @@ st.markdown("""
     padding: 82px 24px 34px 24px;
     border-radius: 24px;
     margin-bottom: 22px;
-    background-image:
-        linear-gradient(rgba(0,0,0,0.20), rgba(0,0,0,0.58)),
-        url("https://source.unsplash.com/1200x700/?bamboo,forest");
+background-image:
+    linear-gradient(rgba(0,0,0,0.20), rgba(0,0,0,0.58)),
+    url("https://raw.githubusercontent.com/chulhan11jang/CEO_Talk_Plus/main/bamboo.jpeg");
     background-size: cover;
     background-position: center;
     overflow: hidden;
