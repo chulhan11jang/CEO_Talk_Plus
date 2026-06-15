@@ -95,37 +95,46 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
 with tab1:
 
     st.markdown("""
-   <div class="card">
+    <div class="card">
 
-<p>
-<b>🚍 배차 정보</b><br>
-<span style="font-size:24px; font-weight:700; color:#A50020;">
-광주77사 1911
-</span>
-</p>
+        <table style="width:100%; border-collapse:collapse;">
+            <tr>
+                <td style="padding:14px 0; font-weight:600;">
+                    🚍 배차 정보
+                </td>
+                <td style="padding:14px 0; text-align:right; font-size:22px; font-weight:700; color:#A50020;">
+                    광주77사 1911
+                </td>
+            </tr>
 
-<p>
-<b>📍 탑승 위치</b><br>
-<span style="font-size:20px; font-weight:600;">
-A동 정문 앞
-</span>
-</p>
+            <tr>
+                <td style="padding:14px 0; font-weight:600;">
+                    📍 탑승 위치
+                </td>
+                <td style="padding:14px 0; text-align:right; font-size:18px; font-weight:600;">
+                    A동 정문 앞
+                </td>
+            </tr>
 
-<p>
-<b>⏰ 집결 시간</b><br>
-<span style="font-size:24px; font-weight:700; color:#A50020;">
-15:25까지 탑승 완료
-</span>
-</p>
+            <tr>
+                <td style="padding:14px 0; font-weight:600;">
+                    ⏰ 집결 시간
+                </td>
+                <td style="padding:14px 0; text-align:right; font-size:22px; font-weight:700; color:#A50020;">
+                    15:25까지 탑승 완료
+                </td>
+            </tr>
+        </table>
 
-<hr>
+        <hr>
 
-<p style="color:#A50020; font-weight:700;">
-※ 15:30 정시 출발
-</p>
+        <div style="text-align:center; font-size:18px; font-weight:700; color:#A50020;">
+            ※ 15:30 정시 출발
+        </div>
 
-</div>
-
+    </div>
+    """, unsafe_allow_html=True)
+    
 with tab2:
     st.subheader("일정")
 
