@@ -129,7 +129,7 @@ with tab1:
         <hr>
 
         <div style="text-align:center; font-size:18px; font-weight:700; color:#A50020;">
-            ※ 15:30 정시 출발
+            ※ 15:30 정시 출발 예정
         </div>
 
     </div>
