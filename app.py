@@ -75,13 +75,13 @@ st.markdown("""
 st.markdown("""
 <div class="card">
     <h3>Today's Message</h3>
-    <p><b>사후 대응이 아닌, 선제적 대비를 통한 목표 달성</b></p>
+    <p><b>CEO와 함께하는 Talk Plus, 소통에 의미를 더하다</b></p>
     <p class="small">
-    변화에 먼저 준비하고 빠르게 실행하는 리더십을 생각하는 시간입니다.
+    죽녹원 산책과 Activity, 석식을 통해 모빌리티솔루션 리더 간 소통과 One Team 분위기를 강화하는 시간입니다.
     </p>
     <span class="tag">One Team</span>
-    <span class="tag">선제적 대비</span>
-    <span class="tag">빠른 실행</span>
+    <span class="tag">Enable the Next</span>
+    <span class="tag">Mobility Solution</span>
 </div>
 """, unsafe_allow_html=True)
 
