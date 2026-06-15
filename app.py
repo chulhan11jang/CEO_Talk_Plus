@@ -87,26 +87,51 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
-    "소개", "일정", "Talking Point", "조 편성", "포토미션", "석식"
+tab1, tab2, tab3, tab4, tab5 = st.tabs([
+    "집결 정보", "일정", "조 편성", "죽녹원", "석식"
 ])
 
 
 with tab1:
+
     st.markdown("""
     <div class="card">
-        <h3>프로그램 소개</h3>
-        <p>
-        CEO Talk Plus는 모빌리티솔루션 리더들이 CEO와 함께 산책, Activity, 석식을 통해
-        사업 방향과 리더의 역할을 자연스럽게 논의하는 소통 프로그램입니다.
-        </p>
-        <p class="small">
-        본 페이지는 행사 당일 참가자가 일정, 조 편성, 미션, 장소 안내를 빠르게 확인하기 위한 모바일 가이드입니다.
+        <h3>🚌 집결 정보</h3>
+        <p class="small">행사 당일 아래 정보를 확인 후 차량에 탑승해 주세요.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <div class="card">
+        <h4>🚍 배차 정보</h4>
+        <p style="font-size:24px; font-weight:700; color:#A50020;">
+        광주77사 1911
         </p>
     </div>
     """, unsafe_allow_html=True)
 
-    st.info("세부 내용은 행사 운영안 확정에 따라 계속 업데이트됩니다.")
+    st.markdown("""
+    <div class="card">
+        <h4>📍 탑승 위치</h4>
+        <p style="font-size:20px; font-weight:600;">
+        A동 정문 앞
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <div class="card">
+        <h4>⏰ 집결 시간</h4>
+        <p style="font-size:24px; font-weight:700; color:#A50020;">
+        15:25까지 탑승 완료
+        </p>
+        <p class="small">
+        원활한 출발을 위해 시간을 준수해 주시기 바랍니다.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.warning("15:30 정시 출발 예정")
 
 
 with tab2:
