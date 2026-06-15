@@ -161,9 +161,6 @@ st.markdown("""
     CEO와 리더 간 직접적인 소통을 통해<br>
     조직의 방향성과 생각을 공유하는 자리
     </p>
-    <span class="tag">One Team</span>
-    <span class="tag">Enable the Next</span>
-    <span class="tag">Mobility Solution</span>
 </div>
 """, unsafe_allow_html=True)
 
