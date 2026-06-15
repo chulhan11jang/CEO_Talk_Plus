@@ -135,7 +135,7 @@ with tab1:
 
 
 with tab2:
-    st.subheader("전체 일정")
+    st.subheader("일정")
 
     schedule = [
         ("15:30 ~ 16:00", "집결 및 이동", "참석자 확인, 이동 준비"),
@@ -156,7 +156,7 @@ with tab2:
 
 
 with tab3:
-    st.subheader("산책 Talking Point")
+    st.subheader("조 편성")
 
     st.markdown("""
     <div class="card">
@@ -178,7 +178,7 @@ with tab3:
 
 
 with tab4:
-    st.subheader("조 편성")
+    st.subheader("죽녹원")
 
     st.caption("※ 실제 명단 확정 후 업데이트 예정")
 
@@ -196,7 +196,7 @@ with tab4:
 
 
 with tab5:
-    st.subheader("포토미션")
+    st.subheader("석식")
 
     st.markdown("""
     <div class="card">
