@@ -190,29 +190,29 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
 # Tab 1: 집결 정보
 # =========================
 with tab1:
+
     st.markdown("""
-    <div class="card">
-        <div class="info-row">
-            <div class="info-label">🚍 배차 정보</div>
-            <div class="info-value">광주77사 1911</div>
-        </div>
+<div class="card">
+<div class="info-row">
+<div class="info-label">🚍 배차 정보</div>
+<div class="info-value">광주77사 1911</div>
+</div>
 
-        <div class="info-row">
-            <div class="info-label">📍 탑승 위치</div>
-            <div class="info-value-normal">A동 정문 앞</div>
-        </div>
+<div class="info-row">
+<div class="info-label">📍 탑승 위치</div>
+<div class="info-value-normal">A동 정문 앞</div>
+</div>
 
-        <div class="info-row-last">
-            <div class="info-label">⏰ 집결 시간</div>
-            <div class="info-value">15:25까지 탑승 완료</div>
-        </div>
+<div class="info-row-last">
+<div class="info-label">⏰ 집결 시간</div>
+<div class="info-value">15:25까지 탑승 완료</div>
+</div>
 
-        <div class="notice">
-            ※ 15:30 정시 출발 예정
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-
+<div class="notice">
+※ 15:30 정시 출발 예정
+</div>
+</div>
+""", unsafe_allow_html=True)
 
 # =========================
 # Tab 2: 일정
