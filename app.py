@@ -95,44 +95,36 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
 with tab1:
 
     st.markdown("""
-    <div class="card">
-        <h3>🚌 집결 정보</h3>
-        <p class="small">행사 당일 아래 정보를 확인 후 차량에 탑승해 주세요.</p>
-    </div>
-    """, unsafe_allow_html=True)
+   <div class="card">
 
-    st.markdown("""
-    <div class="card">
-        <h4>🚍 배차 정보</h4>
-        <p style="font-size:24px; font-weight:700; color:#A50020;">
-        광주77사 1911
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
+<p>
+<b>🚍 배차 정보</b><br>
+<span style="font-size:24px; font-weight:700; color:#A50020;">
+광주77사 1911
+</span>
+</p>
 
-    st.markdown("""
-    <div class="card">
-        <h4>📍 탑승 위치</h4>
-        <p style="font-size:20px; font-weight:600;">
-        A동 정문 앞
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
+<p>
+<b>📍 탑승 위치</b><br>
+<span style="font-size:20px; font-weight:600;">
+A동 정문 앞
+</span>
+</p>
 
-    st.markdown("""
-    <div class="card">
-        <h4>⏰ 집결 시간</h4>
-        <p style="font-size:24px; font-weight:700; color:#A50020;">
-        15:25까지 탑승 완료
-        </p>
-        <p class="small">
-        원활한 출발을 위해 시간을 준수해 주시기 바랍니다.
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
+<p>
+<b>⏰ 집결 시간</b><br>
+<span style="font-size:24px; font-weight:700; color:#A50020;">
+15:25까지 탑승 완료
+</span>
+</p>
 
-    st.warning("15:30 정시 출발 예정")
+<hr>
 
+<p style="color:#A50020; font-weight:700;">
+※ 15:30 정시 출발
+</p>
+
+</div>
 
 with tab2:
     st.subheader("일정")
