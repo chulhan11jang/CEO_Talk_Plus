@@ -85,16 +85,6 @@ st.markdown("""
     text-align: right;
 }
 
-.notice {
-    background: #FFF4E5;
-    border-radius: 14px;
-    padding: 14px 16px;
-    color: #A50020;
-    font-weight: 800;
-    text-align: center;
-    margin-top: 12px;
-}
-
 .small {
     color: #666;
     font-size: 14px;
@@ -204,9 +194,6 @@ with tab1:
 <div class="info-row-last">
 <div class="info-label">⏰ 집결 시간</div>
 <div class="info-value">15:25까지 탑승 완료</div>
-</div>
-<div class="notice">
-※ 15:30 정시 출발 예정
 </div>
 </div>
 """, unsafe_allow_html=True)
