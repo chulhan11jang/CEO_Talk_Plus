@@ -67,7 +67,7 @@ st.markdown("""
 st.markdown("""
 <div class="hero">
     <h1>CEO Talk Plus</h1>
-    <p>모빌리티솔루션 리더 대상 소통 프로그램</p>
+    <p>with 모빌리티솔루션</p>
     <p>2026.06.18 · 담양 죽녹원</p>
 </div>
 """, unsafe_allow_html=True)
