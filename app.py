@@ -427,7 +427,9 @@ with sub2:
 
 사진을 업로드해 주신 분들 중<br>
 추첨을 통해 커피 쿠폰을 드립니다.
-
+</div>
+""", unsafe_allow_html=True)
+    
     uploader_name = st.text_input("이름")
 
     photo_comment = st.text_input("한 줄 소감")
