@@ -587,13 +587,11 @@ with tab5:
         use_container_width=True
     )
 
+st.markdown("---")
 
-st.markdown(
-    """
-    <div style="color:#888888; font-size:0.85rem;">
-    CEO Talk Plus · Mobility Solution<br>
-    문의 : 장철한 선임 (010-3476-6176)
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+st.markdown("""
+<div style="font-size:0.85rem; color:#888888;">
+CEO Talk Plus · Mobility Solution<br>
+문의 : 장철한 선임 (010-3476-6176)
+</div>
+""", unsafe_allow_html=True)
