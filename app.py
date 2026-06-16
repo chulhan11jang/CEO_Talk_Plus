@@ -524,13 +524,13 @@ with sub2:
 <style>
 .photo-grid {
 display: grid;
-grid-template-columns: repeat(3, 1fr);
+grid-template-columns: repeat(3, minmax(0, 1fr));
 gap: 8px;
 }
 
 .photo-thumb {
 width: 100%;
-aspect-ratio: 1 / 1;
+height: 105px;
 object-fit: cover;
 border-radius: 10px;
 display: block;
