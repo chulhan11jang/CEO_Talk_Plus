@@ -311,18 +311,21 @@ with tab4:
         "루트", "Talking Point", "포토미션", "Activity"
     ])
 
-    with sub1:
-        st.markdown("""
-        <div class="card">
-            <h3>죽녹원 산책 루트</h3>
-            <p>
-            조별로 죽녹원 산책로를 이동하며 CEO와 자유롭게 소통합니다.
-            </p>
-            <p class="small">
-            세부 동선 및 출발 순서는 현장 안내에 따라 진행됩니다.
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
+with sub1:
+    st.image(
+        "https://raw.githubusercontent.com/chulhan11jang/CEO_Talk_Plus/main/route.png",
+        use_container_width=True
+    )
+
+    st.markdown("""
+<div class="card">
+<b>출발지</b> : 담양 종합체육관 주차장<br>
+<b>집결지</b> : 죽녹원 입구<br>
+<b>단체사진 촬영</b> : 죽녹원 입구 인근<br>
+<b>하차지점</b> : 주차장 인근<br>
+<b>Post</b> : 산책 중간 Activity 진행 지점
+</div>
+""", unsafe_allow_html=True)
 
     with sub2:
         st.markdown("""
