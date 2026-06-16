@@ -31,6 +31,14 @@ def upload_file_to_github(file_bytes, path, message):
     }
 
     response = requests.put(url, json=data, headers=headers)
+
+    if response.status_code not in [200, 201]:
+        st.error(
+            f"GitHub 업로드 실패\n"
+            f"상태코드 : {response.status_code}\n"
+            f"내용 : {response.text[:500]}"
+        )
+
     return response.status_code in [200, 201]
 
 
