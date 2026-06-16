@@ -307,7 +307,7 @@ with tab3:
 # Tab 4: 죽녹원
 # =========================
 with tab4:
-    sub1, sub2, sub3, sub4 = st.tabs([
+    sub1, sub2, sub3 = st.tabs([
         "루트", "포토미션", "Activity"
     ])
 
