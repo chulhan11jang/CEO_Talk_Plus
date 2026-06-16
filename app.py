@@ -252,7 +252,7 @@ st.markdown("""
 # =========================
 st.markdown("""
 <div class="card">
-    <h2 style="font-size:30px;">프로그램 소개</h2>
+    <h2 style="font-size:26px;">프로그램 소개</h2>
     <p><b>CEO와 함께하는 Talk Plus, 소통에 의미를 더하다</b></p>
     <p>
     CEO와 리더 간 직접적인 소통을 통해<br>
