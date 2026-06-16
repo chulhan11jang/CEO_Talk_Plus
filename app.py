@@ -519,35 +519,9 @@ with sub2:
 
     photo_items = get_photo_items_from_github()
 
-    if photo_items:
+        if photo_items:
         gallery_html = """
 <style>
-.photo-grid {
-display: grid;
-grid-template-columns: repeat(3, minmax(0, 1fr));
-gap: 8px;
-}
-
-.thumb-box {
-width: 100%;
-aspect-ratio: 1 / 1;
-overflow: hidden;
-border-radius: 10px;
-}
-
-.thumb-box a {
-display: block;
-width: 100%;
-height: 100%;
-}
-
-.photo-thumb {
-width: 100%;
-height: 100%;
-object-fit: cover;
-display: block;
-}
-
 .photo-modal {
 display: none;
 position: fixed;
@@ -603,16 +577,16 @@ line-height: 1.5;
 color: #1F2937;
 margin-top: 8px;
 }
-
-.photo-guide {
-font-size: 13px;
-color: #777;
-margin-top: 8px;
-}
 </style>
 
 <div id="gallery"></div>
-<div class="photo-grid">
+
+<div style="
+display:grid;
+grid-template-columns:repeat(3, minmax(0, 1fr));
+gap:8px;
+width:100%;
+">
 """
 
         for idx, item in enumerate(reversed(photo_items)):
@@ -622,9 +596,23 @@ margin-top: 8px;
             comment = html.escape(item.get("comment", "소감 미입력"))
 
             gallery_html += f"""
-<div class="thumb-box">
-<a href="#{modal_id}">
-<img class="photo-thumb" src="{image_url}">
+<div style="
+width:100%;
+aspect-ratio:1/1;
+overflow:hidden;
+border-radius:12px;
+">
+<a href="#{modal_id}" style="
+display:block;
+width:100%;
+height:100%;
+">
+<img src="{image_url}" style="
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+">
 </a>
 </div>
 
@@ -640,7 +628,10 @@ margin-top: 8px;
 
         gallery_html += """
 </div>
-<div class="photo-guide">사진을 누르면 크게 볼 수 있습니다.</div>
+
+<div style="font-size:13px; color:#777; margin-top:8px;">
+사진을 누르면 크게 볼 수 있습니다.
+</div>
 """
 
         st.markdown(gallery_html, unsafe_allow_html=True)
