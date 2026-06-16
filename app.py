@@ -568,24 +568,30 @@ with sub3:
 # Tab 5: 석식
 # =========================
 with tab5:
-    st.markdown("""
-    <div class="card">
-    <b>🍽 식당 안내</b><br><br>
-    <b>식당</b><br>
-    한상근대통밥집<br>
-    (담양군 월산면 담장로 113)
-    <br><br>
-    <b>메뉴</b><br>
-    죽계찜 · 떡갈비 · 돼지갈비 · 홍어무침
-    <br><br>
-    <b>🪑 자리배치도</b><br><br>
-    </div>
-    """, unsafe_allow_html=True)
 
-    st.image(
-        "https://raw.githubusercontent.com/chulhan11jang/CEO_Talk_Plus/main/seat.png",
-        use_container_width=True
-    )
+    st.markdown("""
+<div class="card">
+
+<b>🍽 식당 안내</b><br><br>
+
+<b>식당</b><br>
+한상근대통밥집<br>
+(담양군 월산면 담장로 113)
+
+<br><br>
+
+<b>메뉴</b><br>
+죽계찜 · 떡갈비 · 돼지갈비 · 홍어무침
+
+<br><br>
+
+<b>🪑 자리배치도</b><br><br>
+
+<img src="https://raw.githubusercontent.com/chulhan11jang/CEO_Talk_Plus/main/seat.png"
+     style="width:100%; border-radius:12px; border:1px solid #E7E7E7;">
+
+</div>
+""", unsafe_allow_html=True)
 
 st.markdown("---")
 
