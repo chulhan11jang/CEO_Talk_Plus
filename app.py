@@ -570,43 +570,34 @@ with sub3:
 with tab5:
 
     st.markdown("""
-    <div class="card">
+<div class="card">
+<div class="info-row">
+<div class="info-label">🍽 식당</div>
+<div style="text-align:right;">
+<div class="info-value-normal">한상근대통밥집</div>
+<div class="small">(담양군 월산면 담장로 113)</div>
+</div>
+</div>
 
-        <div class="info-row">
-            <div class="info-label">🍽 식당</div>
-            <div style="text-align:right;">
-                <div class="info-value-normal">한상근대통밥집</div>
-                <div class="small">(담양군 월산면 담장로 113)</div>
-            </div>
-        </div>
-
-        <div class="info-row-last">
-            <div class="info-label">🍴 메뉴</div>
-            <div class="info-value-normal">
-                죽계찜 · 떡갈비 · 돼지갈비 · 홍어무침
-            </div>
-        </div>
-
-    </div>
-    """, unsafe_allow_html=True)
-
+<div class="info-row-last">
+<div class="info-label">🍴 메뉴</div>
+<div class="info-value-normal">죽계찜 · 떡갈비 · 돼지갈비 · 홍어무침</div>
+</div>
+</div>
+""", unsafe_allow_html=True)
 
     st.markdown("""
-    <div class="card">
+<div class="card">
+<div class="info-row-last">
+<div class="info-label">🪑 자리배치도</div>
+</div>
 
-        <div class="info-row-last">
-            <div class="info-label">🪑 자리배치도</div>
-        </div>
-
-        <div style="margin-top:12px;">
-            <img src="https://raw.githubusercontent.com/chulhan11jang/CEO_Talk_Plus/main/seat.png"
-                 style="width:100%;
-                        border-radius:12px;
-                        border:1px solid #E7E7E7;">
-        </div>
-
-    </div>
-    """, unsafe_allow_html=True)
+<div style="margin-top:12px;">
+<img src="https://raw.githubusercontent.com/chulhan11jang/CEO_Talk_Plus/main/seat.png"
+style="width:100%; border-radius:12px; border:1px solid #E7E7E7;">
+</div>
+</div>
+""", unsafe_allow_html=True)
 
 st.markdown("---")
 
