@@ -80,8 +80,25 @@ def get_photo_items_from_github():
             })
 
     return photo_items
-    def compress_image(uploaded_file, max_width=1280, quality=70):
+
+
+def compress_image(uploaded_file, max_width=1280, quality=70):
     image = Image.open(uploaded_file)
+    image = ImageOps.exif_transpose(image)
+
+    if image.mode in ("RGBA", "P"):
+        image = image.convert("RGB")
+
+    width, height = image.size
+
+    if width > max_width:
+        new_height = int(height * max_width / width)
+        image = image.resize((max_width, new_height))
+
+    buffer = BytesIO()
+    image.save(buffer, format="JPEG", quality=quality, optimize=True)
+
+    return buffer.getvalue()
     image = ImageOps.exif_transpose(image)
 
     if image.mode in ("RGBA", "P"):
