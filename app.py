@@ -343,23 +343,36 @@ CEO 및 리더들과 함께 걸으며<br>
 </div>
 """, unsafe_allow_html=True)
 
-    with sub2:
-        st.markdown("""
-        <div class="card">
-            <h3>포토미션</h3>
-            <p><b>주제: Enable the Next를 표현하는 사진</b></p>
-            <p>
-            조별로 산책 중 모빌리티솔루션의 미래, 도전, One Team의 의미가 드러나는 장면을 사진으로 남겨주세요.
-            </p>
-            <ul>
-                <li>조장이 대표 사진을 업로드합니다.</li>
-                <li>석식 중 일부 사진을 함께 공유합니다.</li>
-                <li>자연스러운 분위기와 메시지가 잘 드러나는 사진을 권장합니다.</li>
-            </ul>
-        </div>
-        """, unsafe_allow_html=True)
+with sub2:
 
-        st.link_button("포토미션 업로드 바로가기", "https://padlet.com/")
+    st.markdown("""
+    <div class="card">
+    <b>포토미션</b><br><br>
+
+    주제 : Enable the Next를 표현하는 사진
+
+    ...
+    </div>
+    """, unsafe_allow_html=True)
+
+    uploaded_files = st.file_uploader(
+        "사진을 업로드해 주세요",
+        type=["jpg", "jpeg", "png"],
+        accept_multiple_files=True
+    )
+
+    if "photos" not in st.session_state:
+        st.session_state.photos = []
+
+    if uploaded_files:
+        for file in uploaded_files:
+            st.session_state.photos.append(file)
+
+    if st.session_state.photos:
+        st.subheader("📷 업로드된 사진")
+
+        for photo in st.session_state.photos:
+            st.image(photo, use_container_width=True)
 
     with sub3:
         st.markdown("""
