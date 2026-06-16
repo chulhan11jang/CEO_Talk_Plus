@@ -477,7 +477,7 @@ with sub2:
 
     photo_items = get_photo_items_from_github()
 
-    if photo_items:
+       if photo_items:
         gallery_html = """
 <style>
 .photo-grid {
@@ -491,23 +491,80 @@ aspect-ratio: 1 / 1;
 object-fit: cover;
 border-radius: 10px;
 }
+.lightbox {
+display: none;
+position: fixed;
+z-index: 9999;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.65);
+padding: 40px 18px;
+box-sizing: border-box;
+overflow-y: auto;
+}
+.lightbox:target {
+display: block;
+}
+.lightbox-content {
+background: white;
+border-radius: 20px;
+padding: 16px;
+max-width: 520px;
+margin: 0 auto;
+}
+.lightbox-content img {
+width: 100%;
+border-radius: 16px;
+margin-bottom: 16px;
+}
+.close-btn {
+float: right;
+font-size: 28px;
+font-weight: bold;
+text-decoration: none;
+color: #111827;
+}
+.uploader-name {
+font-size: 24px;
+font-weight: 800;
+margin-top: 8px;
+}
+.comment {
+font-size: 18px;
+margin-top: 10px;
+line-height: 1.5;
+}
 </style>
+
+<div id="gallery"></div>
 <div class="photo-grid">
 """
 
-        for item in reversed(photo_items):
+        for idx, item in enumerate(reversed(photo_items)):
+            modal_id = f"photo_{idx}"
+
             gallery_html += f"""
 <div class="photo-card">
-<a href="{item['image_url']}" target="_blank">
+<a href="#{modal_id}">
 <img src="{item['image_url']}">
 </a>
+</div>
+
+<div id="{modal_id}" class="lightbox">
+<div class="lightbox-content">
+<a href="#gallery" class="close-btn">×</a>
+<img src="{item['image_url']}">
+<div class="uploader-name">👤 {item['uploader']}</div>
+<div class="comment">{item['comment']}</div>
+</div>
 </div>
 """
 
         gallery_html += "</div>"
 
         st.markdown(gallery_html, unsafe_allow_html=True)
-        st.caption("사진을 누르면 새 창에서 크게 볼 수 있습니다.")
 
     else:
         st.info("아직 업로드된 사진이 없습니다.")
