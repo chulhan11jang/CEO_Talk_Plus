@@ -574,10 +574,14 @@ with tab5:
 
 <div class="info-row">
     <div class="info-label">🍽 식당</div>
-    <div class="small" style="text-align:right;">
-        한상근대통밥집<br>
+    <div style="text-align:right;">
+    <div style="font-weight:700; color:#1F2937;">
+        한상근대통밥집
+    </div>
+    <div class="small">
         (담양군 월산면 담장로 113)
     </div>
+</div>
 </div>
 
 <div class="info-row">
