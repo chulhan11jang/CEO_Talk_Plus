@@ -4,6 +4,9 @@ import base64
 import time
 import json
 import uuid
+from PIL import Image, ImageOps
+from io import BytesIO
+import html
 
 st.set_page_config(
     page_title="CEO Talk Plus",
@@ -77,6 +80,23 @@ def get_photo_items_from_github():
             })
 
     return photo_items
+    def compress_image(uploaded_file, max_width=1280, quality=70):
+    image = Image.open(uploaded_file)
+    image = ImageOps.exif_transpose(image)
+
+    if image.mode in ("RGBA", "P"):
+        image = image.convert("RGB")
+
+    width, height = image.size
+
+    if width > max_width:
+        new_height = int(height * max_width / width)
+        image = image.resize((max_width, new_height))
+
+    buffer = BytesIO()
+    image.save(buffer, format="JPEG", quality=quality, optimize=True)
+
+    return buffer.getvalue()
 # =========================
 # CSS
 # =========================
@@ -419,21 +439,19 @@ CEO 및 리더들과 함께 걸으며<br>
 with sub2:
 
     st.markdown("""
-    <div class="card">
+<div class="card">
+<b>📸 오늘의 순간을 함께 기록해 주세요.</b><br><br>
 
-<b>📸 오늘의 순간을 함께 기록해 주세요.</b><br>
-
-함께 걷는모습, 소통의 모습 등<br>
+함께 걷는 모습, 소통의 모습 등<br>
 오늘의 현장감과 즐거운 분위기가 담긴 사진을<br>
-자유롭게 업로드해 주시기 바랍니다.<br>
+자유롭게 업로드해 주시기 바랍니다.<br><br>
 
 사진을 업로드해 주신 분들 중<br>
 추첨을 통해 커피 쿠폰을 드립니다.
 </div>
 """, unsafe_allow_html=True)
-    
-    uploader_name = st.text_input("이름")
 
+    uploader_name = st.text_input("이름")
     photo_comment = st.text_input("한 줄 소감")
 
     uploaded_photo = st.file_uploader(
@@ -442,7 +460,6 @@ with sub2:
     )
 
     if uploaded_photo is not None:
-
         if st.button("사진 업로드하기"):
 
             if not uploader_name.strip():
@@ -452,88 +469,152 @@ with sub2:
                 st.warning("소감을 입력해 주세요.")
 
             else:
-
-                ext = uploaded_photo.name.split(".")[-1]
-
                 photo_id = f"{int(time.time())}_{uuid.uuid4().hex[:8]}"
-
-                photo_filename = f"{photo_id}.{ext}"
-
+                photo_filename = f"{photo_id}.jpg"
                 meta_filename = f"{photo_id}.json"
 
+                compressed_photo = compress_image(uploaded_photo)
+
                 photo_success = upload_file_to_github(
-                    uploaded_photo.getvalue(),
+                    compressed_photo,
                     f"photos/{photo_filename}",
                     f"Upload photo {photo_filename}"
                 )
 
                 metadata = {
-                    "uploader": uploader_name,
-                    "comment": photo_comment
+                    "uploader": uploader_name.strip(),
+                    "comment": photo_comment.strip()
                 }
 
                 meta_success = upload_file_to_github(
-                    json.dumps(
-                        metadata,
-                        ensure_ascii=False
-                    ).encode("utf-8"),
+                    json.dumps(metadata, ensure_ascii=False).encode("utf-8"),
                     f"photos/{meta_filename}",
                     f"Upload metadata {meta_filename}"
                 )
 
                 if photo_success and meta_success:
-                    st.success("업로드 완료")
+                    st.success("사진이 업로드되었습니다.")
                     st.rerun()
-
                 else:
-                    st.error("업로드 실패")
-
+                    st.error("업로드에 실패했습니다. 관리자에게 문의해 주세요.")
 
     st.markdown("### 📷 업로드된 사진")
 
     photo_items = get_photo_items_from_github()
 
     if photo_items:
+        gallery_html = """
+<style>
+.photo-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 8px;
+}
 
-        cols = st.columns(3)
+.photo-thumb {
+width: 100%;
+aspect-ratio: 1 / 1;
+object-fit: cover;
+border-radius: 10px;
+display: block;
+}
+
+.photo-modal {
+display: none;
+position: fixed;
+z-index: 9999;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.72);
+padding: 42px 16px;
+box-sizing: border-box;
+overflow-y: auto;
+}
+
+.photo-modal:target {
+display: block;
+}
+
+.photo-modal-card {
+background: white;
+border-radius: 20px;
+padding: 14px;
+max-width: 520px;
+margin: 0 auto;
+box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+.photo-modal-card img {
+width: 100%;
+border-radius: 14px;
+margin-bottom: 14px;
+}
+
+.photo-close {
+float: right;
+font-size: 28px;
+font-weight: 800;
+text-decoration: none;
+color: #111827;
+line-height: 1;
+}
+
+.photo-name {
+font-size: 22px;
+font-weight: 800;
+color: #1F2937;
+margin-top: 10px;
+}
+
+.photo-comment {
+font-size: 17px;
+line-height: 1.5;
+color: #1F2937;
+margin-top: 8px;
+}
+
+.photo-guide {
+font-size: 13px;
+color: #777;
+margin-top: 8px;
+}
+</style>
+
+<div id="gallery"></div>
+<div class="photo-grid">
+"""
 
         for idx, item in enumerate(reversed(photo_items)):
+            modal_id = f"photo_{idx}"
+            image_url = item["image_url"]
+            uploader = html.escape(item.get("uploader", "작성자 미입력"))
+            comment = html.escape(item.get("comment", "소감 미입력"))
 
-            with cols[idx % 3]:
+            gallery_html += f"""
+<a href="#{modal_id}">
+<img class="photo-thumb" src="{image_url}">
+</a>
 
-                st.image(
-                    item["image_url"],
-                    use_container_width=True
-                )
+<div id="{modal_id}" class="photo-modal">
+<div class="photo-modal-card">
+<a href="#gallery" class="photo-close">×</a>
+<img src="{image_url}">
+<div class="photo-name">👤 {uploader}</div>
+<div class="photo-comment">{comment}</div>
+</div>
+</div>
+"""
 
-                if st.button(
-                    "보기",
-                    key=f"photo_{idx}"
-                ):
-                    st.session_state["selected_photo"] = item
+        gallery_html += """
+</div>
+<div class="photo-guide">사진을 누르면 크게 볼 수 있습니다.</div>
+"""
 
-
-        if "selected_photo" in st.session_state:
-
-            selected = st.session_state["selected_photo"]
-
-            st.markdown("---")
-
-            st.image(
-                selected["image_url"],
-                use_container_width=True
-            )
-
-            st.markdown(
-                f"### 👤 {selected['uploader']}"
-            )
-
-            st.info(
-                selected["comment"]
-            )
+        st.markdown(gallery_html, unsafe_allow_html=True)
 
     else:
-
         st.info("아직 업로드된 사진이 없습니다.")
         
 with sub3:
