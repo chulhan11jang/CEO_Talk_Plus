@@ -2,23 +2,23 @@ import streamlit as st
 import requests
 import base64
 import time
+import json
+import uuid
 
 st.set_page_config(
     page_title="CEO Talk Plus",
     page_icon="🌿",
     layout="centered"
 )
-def upload_photo_to_github(file, filename):
+def upload_file_to_github(file_bytes, path, message):
     repo = st.secrets["GITHUB_REPO"]
     token = st.secrets["GITHUB_TOKEN"]
 
-    path = f"photos/{filename}"
     url = f"https://api.github.com/repos/{repo}/contents/{path}"
-
-    content = base64.b64encode(file.getvalue()).decode("utf-8")
+    content = base64.b64encode(file_bytes).decode("utf-8")
 
     data = {
-        "message": f"Upload photo {filename}",
+        "message": message,
         "content": content
     }
 
@@ -31,7 +31,7 @@ def upload_photo_to_github(file, filename):
     return response.status_code in [200, 201]
 
 
-def get_photo_urls_from_github():
+def get_photo_items_from_github():
     repo = st.secrets["GITHUB_REPO"]
     token = st.secrets["GITHUB_TOKEN"]
 
@@ -48,13 +48,35 @@ def get_photo_urls_from_github():
         return []
 
     files = response.json()
+    file_map = {f["name"]: f for f in files}
 
-    photo_urls = []
+    photo_items = []
+
     for file in files:
-        if file["name"].lower().endswith((".jpg", ".jpeg", ".png")):
-            photo_urls.append(file["download_url"])
+        name = file["name"]
 
-    return photo_urls
+        if name.lower().endswith((".jpg", ".jpeg", ".png")):
+            base_name = name.rsplit(".", 1)[0]
+            meta_name = f"{base_name}.json"
+
+            uploader = "작성자 미입력"
+            comment = "소감 미입력"
+
+            if meta_name in file_map:
+                meta_response = requests.get(file_map[meta_name]["download_url"])
+                if meta_response.status_code == 200:
+                    meta = meta_response.json()
+                    uploader = meta.get("uploader", uploader)
+                    comment = meta.get("comment", comment)
+
+            photo_items.append({
+                "filename": name,
+                "image_url": file["download_url"],
+                "uploader": uploader,
+                "comment": comment
+            })
+
+    return photo_items
 # =========================
 # CSS
 # =========================
@@ -401,12 +423,15 @@ with sub2:
 조별로 산책 중 모빌리티솔루션의 미래, 도전, One Team의 의미가 드러나는 장면을 사진으로 남겨주세요.
 </p>
 <ul>
-<li>조장이 대표 사진을 업로드합니다.</li>
+<li>사진 업로드 시 이름과 한 줄 소감을 함께 작성해 주세요.</li>
 <li>업로드된 사진은 아래 갤러리에 표시됩니다.</li>
-<li>자연스러운 분위기와 메시지가 잘 드러나는 사진을 권장합니다.</li>
+<li>사진을 크게 보고 싶으면 '크게 보기' 버튼을 눌러주세요.</li>
 </ul>
 </div>
 """, unsafe_allow_html=True)
+
+    uploader_name = st.text_input("이름을 입력해 주세요")
+    photo_comment = st.text_input("사진에 대한 한 줄 소감을 작성해 주세요")
 
     uploaded_photo = st.file_uploader(
         "사진을 업로드해 주세요",
@@ -415,26 +440,61 @@ with sub2:
 
     if uploaded_photo is not None:
         if st.button("사진 업로드하기"):
-            filename = f"{int(time.time())}_{uploaded_photo.name}"
-
-            success = upload_photo_to_github(uploaded_photo, filename)
-
-            if success:
-                st.success("사진이 업로드되었습니다.")
-                st.rerun()
+            if not uploader_name.strip():
+                st.warning("이름을 입력해 주세요.")
+            elif not photo_comment.strip():
+                st.warning("한 줄 소감을 입력해 주세요.")
             else:
-                st.error("업로드에 실패했습니다. 관리자에게 문의해 주세요.")
+                ext = uploaded_photo.name.split(".")[-1].lower()
+                photo_id = f"{int(time.time())}_{uuid.uuid4().hex[:8]}"
+                photo_filename = f"{photo_id}.{ext}"
+                meta_filename = f"{photo_id}.json"
+
+                photo_success = upload_file_to_github(
+                    uploaded_photo.getvalue(),
+                    f"photos/{photo_filename}",
+                    f"Upload photo {photo_filename}"
+                )
+
+                metadata = {
+                    "uploader": uploader_name.strip(),
+                    "comment": photo_comment.strip()
+                }
+
+                meta_success = upload_file_to_github(
+                    json.dumps(metadata, ensure_ascii=False).encode("utf-8"),
+                    f"photos/{meta_filename}",
+                    f"Upload metadata {meta_filename}"
+                )
+
+                if photo_success and meta_success:
+                    st.success("사진이 업로드되었습니다.")
+                    st.rerun()
+                else:
+                    st.error("업로드에 실패했습니다. 관리자에게 문의해 주세요.")
 
     st.markdown("### 📷 업로드된 사진")
 
-    photo_urls = get_photo_urls_from_github()
+    photo_items = get_photo_items_from_github()
 
-    if photo_urls:
-        cols = st.columns(2)
+    if photo_items:
+        cols = st.columns(3)
 
-        for idx, url in enumerate(photo_urls):
-            with cols[idx % 2]:
-                st.image(url, use_container_width=True)
+        for idx, item in enumerate(reversed(photo_items)):
+            with cols[idx % 3]:
+                st.image(item["image_url"], use_container_width=True)
+
+                if st.button("크게 보기", key=f"view_{item['filename']}"):
+                    st.session_state["selected_photo"] = item
+
+        if "selected_photo" in st.session_state:
+            selected = st.session_state["selected_photo"]
+
+            st.markdown("---")
+            st.markdown(f"### {selected['uploader']}님의 사진")
+            st.image(selected["image_url"], use_container_width=True)
+            st.info(selected["comment"])
+
     else:
         st.info("아직 업로드된 사진이 없습니다.")
 
