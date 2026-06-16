@@ -477,23 +477,41 @@ with sub2:
 
     photo_items = get_photo_items_from_github()
 
-    if photo_items:
-        cols = st.columns(3)
+if photo_items:
+    gallery_html = """
+<style>
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+.photo-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+}
+</style>
+<div class="photo-grid">
+"""
 
-        for idx, item in enumerate(reversed(photo_items)):
-            with cols[idx % 3]:
-                st.image(item["image_url"], use_container_width=True)
+    for item in reversed(photo_items):
+        gallery_html += f"""
+<div class="photo-card">
+<a href="{item['image_url']}" target="_blank">
+<img src="{item['image_url']}">
+</a>
+</div>
+"""
 
-                if st.button("크게 보기", key=f"view_{item['filename']}"):
-                    st.session_state["selected_photo"] = item
+    gallery_html += "</div>"
 
-        if "selected_photo" in st.session_state:
-            selected = st.session_state["selected_photo"]
+    st.markdown(gallery_html, unsafe_allow_html=True)
 
-            st.markdown("---")
-            st.markdown(f"### {selected['uploader']}님의 사진")
-            st.image(selected["image_url"], use_container_width=True)
-            st.info(selected["comment"])
+    st.caption("사진을 누르면 새 창에서 크게 볼 수 있습니다.")
+
+else:
+    st.info("아직 업로드된 사진이 없습니다.")
 
     else:
         st.info("아직 업로드된 사진이 없습니다.")
