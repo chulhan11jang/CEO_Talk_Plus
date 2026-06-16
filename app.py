@@ -477,26 +477,26 @@ with sub2:
 
     photo_items = get_photo_items_from_github()
 
-if photo_items:
-    gallery_html = """
+    if photo_items:
+        gallery_html = """
 <style>
 .photo-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 8px;
 }
 .photo-card img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 10px;
+width: 100%;
+aspect-ratio: 1 / 1;
+object-fit: cover;
+border-radius: 10px;
 }
 </style>
 <div class="photo-grid">
 """
 
-    for item in reversed(photo_items):
-        gallery_html += f"""
+        for item in reversed(photo_items):
+            gallery_html += f"""
 <div class="photo-card">
 <a href="{item['image_url']}" target="_blank">
 <img src="{item['image_url']}">
@@ -504,18 +504,13 @@ if photo_items:
 </div>
 """
 
-    gallery_html += "</div>"
+        gallery_html += "</div>"
 
-    st.markdown(gallery_html, unsafe_allow_html=True)
-
-    st.caption("사진을 누르면 새 창에서 크게 볼 수 있습니다.")
-
-else:
-    st.info("아직 업로드된 사진이 없습니다.")
+        st.markdown(gallery_html, unsafe_allow_html=True)
+        st.caption("사진을 누르면 새 창에서 크게 볼 수 있습니다.")
 
     else:
         st.info("아직 업로드된 사진이 없습니다.")
-
     with sub3:
         st.markdown("""
         <div class="card">
