@@ -589,5 +589,4 @@ with tab5:
 
 
 st.markdown("---")
-st.caption("CEO Talk Plus · Mobility Solution
-문의 : 장철한 선임 (010-3476-6176)")
+st.caption("CEO Talk Plus · Mobility Solution\n문의 : 장철한 선임 (010-3476-6176)")
