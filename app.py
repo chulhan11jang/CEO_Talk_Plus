@@ -1,11 +1,60 @@
 import streamlit as st
+import requests
+import base64
+import time
 
 st.set_page_config(
     page_title="CEO Talk Plus",
     page_icon="🌿",
     layout="centered"
 )
+def upload_photo_to_github(file, filename):
+    repo = st.secrets["GITHUB_REPO"]
+    token = st.secrets["GITHUB_TOKEN"]
 
+    path = f"photos/{filename}"
+    url = f"https://api.github.com/repos/{repo}/contents/{path}"
+
+    content = base64.b64encode(file.getvalue()).decode("utf-8")
+
+    data = {
+        "message": f"Upload photo {filename}",
+        "content": content
+    }
+
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/vnd.github+json"
+    }
+
+    response = requests.put(url, json=data, headers=headers)
+    return response.status_code in [200, 201]
+
+
+def get_photo_urls_from_github():
+    repo = st.secrets["GITHUB_REPO"]
+    token = st.secrets["GITHUB_TOKEN"]
+
+    url = f"https://api.github.com/repos/{repo}/contents/photos"
+
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/vnd.github+json"
+    }
+
+    response = requests.get(url, headers=headers)
+
+    if response.status_code != 200:
+        return []
+
+    files = response.json()
+
+    photo_urls = []
+    for file in files:
+        if file["name"].lower().endswith((".jpg", ".jpeg", ".png")):
+            photo_urls.append(file["download_url"])
+
+    return photo_urls
 # =========================
 # CSS
 # =========================
@@ -344,35 +393,50 @@ CEO 및 리더들과 함께 걸으며<br>
 """, unsafe_allow_html=True)
 
 with sub2:
-
     st.markdown("""
-    <div class="card">
-    <b>포토미션</b><br><br>
+<div class="card">
+<h3>포토미션</h3>
+<p><b>주제: Enable the Next를 표현하는 사진</b></p>
+<p>
+조별로 산책 중 모빌리티솔루션의 미래, 도전, One Team의 의미가 드러나는 장면을 사진으로 남겨주세요.
+</p>
+<ul>
+<li>조장이 대표 사진을 업로드합니다.</li>
+<li>업로드된 사진은 아래 갤러리에 표시됩니다.</li>
+<li>자연스러운 분위기와 메시지가 잘 드러나는 사진을 권장합니다.</li>
+</ul>
+</div>
+""", unsafe_allow_html=True)
 
-    주제 : Enable the Next를 표현하는 사진
-
-    ...
-    </div>
-    """, unsafe_allow_html=True)
-
-    uploaded_files = st.file_uploader(
+    uploaded_photo = st.file_uploader(
         "사진을 업로드해 주세요",
-        type=["jpg", "jpeg", "png"],
-        accept_multiple_files=True
+        type=["jpg", "jpeg", "png"]
     )
 
-    if "photos" not in st.session_state:
-        st.session_state.photos = []
+    if uploaded_photo is not None:
+        if st.button("사진 업로드하기"):
+            filename = f"{int(time.time())}_{uploaded_photo.name}"
 
-    if uploaded_files:
-        for file in uploaded_files:
-            st.session_state.photos.append(file)
+            success = upload_photo_to_github(uploaded_photo, filename)
 
-    if st.session_state.photos:
-        st.subheader("📷 업로드된 사진")
+            if success:
+                st.success("사진이 업로드되었습니다.")
+                st.rerun()
+            else:
+                st.error("업로드에 실패했습니다. 관리자에게 문의해 주세요.")
 
-        for photo in st.session_state.photos:
-            st.image(photo, use_container_width=True)
+    st.markdown("### 📷 업로드된 사진")
+
+    photo_urls = get_photo_urls_from_github()
+
+    if photo_urls:
+        cols = st.columns(2)
+
+        for idx, url in enumerate(photo_urls):
+            with cols[idx % 2]:
+                st.image(url, use_container_width=True)
+    else:
+        st.info("아직 업로드된 사진이 없습니다.")
 
     with sub3:
         st.markdown("""
@@ -389,7 +453,6 @@ with sub2:
             </ul>
         </div>
         """, unsafe_allow_html=True)
-
 
 # =========================
 # Tab 5: 석식
