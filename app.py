@@ -574,15 +574,9 @@ with tab5:
 
 🍽 <b>식당</b> : 한상근대통밥집 (담양군 월산면 담장로 113)
 
-<br>
-
 🍴 <b>메뉴</b> : 죽계찜, 떡갈비, 돼지갈비, 홍어무침
 
-<br>
-
 🪑 <b>자리배치도</b>
-
-<br>
 
 <img src="https://raw.githubusercontent.com/chulhan11jang/CEO_Talk_Plus/main/seat.png"
      style="width:100%; border-radius:12px; border:1px solid #E7E7E7;">
