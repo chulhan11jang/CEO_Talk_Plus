@@ -524,19 +524,26 @@ with sub2:
 <style>
 .photo-grid {
 display: grid;
-grid-template-columns: repeat(3, 1fr);
+grid-template-columns: repeat(3, minmax(0, 1fr));
 gap: 8px;
 }
 
 .thumb-box {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    border-radius: 10px;
+width: 100%;
+aspect-ratio: 1 / 1;
+overflow: hidden;
+border-radius: 10px;
+}
+
+.thumb-box a {
+display: block;
+width: 100%;
+height: 100%;
+}
 
 .photo-thumb {
 width: 100%;
-height: 100px;
+height: 100%;
 object-fit: cover;
 display: block;
 }
@@ -616,11 +623,10 @@ margin-top: 8px;
 
             gallery_html += f"""
 <div class="thumb-box">
-    <a href="#{modal_id}">
-        <img class="photo-thumb" src="{image_url}">
-    </a>
+<a href="#{modal_id}">
+<img class="photo-thumb" src="{image_url}">
+</a>
 </div>
-"""
 
 <div id="{modal_id}" class="photo-modal">
 <div class="photo-modal-card">
