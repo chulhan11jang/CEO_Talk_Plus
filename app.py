@@ -312,6 +312,20 @@ with tab4:
     ])
 
 with sub1:
+        st.markdown("""
+<div class="card">
+<b>🌿 함께 걸으며</b><br><br>
+
+산책은 CEO 및 리더들이 함께 걸으며 생각을 나누는 시간입니다.<br><br>
+
+사업의 방향,<br>
+조직 운영에 대한 고민,<br>
+리더로서의 경험과 생각을
+편안하게 공유해 주시기 바랍니다.
+
+</div>
+""", unsafe_allow_html=True)
+    
     st.image(
         "https://raw.githubusercontent.com/chulhan11jang/CEO_Talk_Plus/main/Route.png",
         use_container_width=True
