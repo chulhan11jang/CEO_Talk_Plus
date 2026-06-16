@@ -227,7 +227,6 @@ with tab1:
 with tab2:
     st.markdown("""
 <div class="card">
-<h3>전체 일정</h3>
 <div class="timeline">
 
 <div class="timeline-item">
