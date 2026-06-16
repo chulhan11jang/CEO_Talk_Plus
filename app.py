@@ -308,7 +308,7 @@ with tab3:
 # =========================
 with tab4:
     sub1, sub2, sub3, sub4 = st.tabs([
-        "루트", "Talking Point", "포토미션", "Activity"
+        "루트", "포토미션", "Activity"
     ])
 
 with sub1:
@@ -346,20 +346,6 @@ CEO 및 리더들과 함께 걸으며<br>
     with sub2:
         st.markdown("""
         <div class="card">
-            <h3>Talking Point</h3>
-            <p><b>‘사후 대응’이 아닌 ‘선제적 대비’를 통한 목표 달성을 위해<br>
-            리더로서 해야 할 것은 무엇인가?</b></p>
-            <ul>
-                <li>모빌리티솔루션이 더 높이 도약하기 위해 먼저 준비해야 할 것은 무엇인가?</li>
-                <li>빠른 실행을 위해 리더가 바꿔야 할 일하는 방식은 무엇인가?</li>
-                <li>Enable the Next를 실제 업무에서 구현하기 위해 필요한 리더십은 무엇인가?</li>
-            </ul>
-        </div>
-        """, unsafe_allow_html=True)
-
-    with sub3:
-        st.markdown("""
-        <div class="card">
             <h3>포토미션</h3>
             <p><b>주제: Enable the Next를 표현하는 사진</b></p>
             <p>
@@ -375,7 +361,7 @@ CEO 및 리더들과 함께 걸으며<br>
 
         st.link_button("포토미션 업로드 바로가기", "https://padlet.com/")
 
-    with sub4:
+    with sub3:
         st.markdown("""
         <div class="card">
             <h3>Activity</h3>
