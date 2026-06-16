@@ -226,53 +226,61 @@ with tab1:
 # =========================
 with tab2:
     st.markdown("""
-    <div class="card">
-        <h3>전체 일정</h3>
-        <div class="timeline">
+<div class="card">
+<h3>전체 일정</h3>
+<div class="timeline">
 
-            <div class="timeline-item">
-                <div class="timeline-time">15:30</div>
-                <div class="timeline-title">광주 사업장 출발</div>
-                <div class="timeline-desc">차량 탑승 및 인원 확인</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-time">16:00</div>
-                <div class="timeline-title">담양 종합체육관 주차장 도착</div>
-                <div class="timeline-desc">집결지 이동 및 조별 정렬</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-time">16:05</div>
-                <div class="timeline-title">프로그램 안내</div>
-                <div class="timeline-desc">산책코스, 포토미션, Activity 안내</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-time">16:12</div>
-                <div class="timeline-title">단체사진 촬영</div>
-                <div class="timeline-desc">현수막 활용 전체 기념촬영</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-time">16:20</div>
-                <div class="timeline-title">물품 수령</div>
-                <div class="timeline-desc">넥쿨러, 생수, 벌레퇴치제 등 수령</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-time">16:30</div>
-                <div class="timeline-title">조별 산책 출발</div>
-                <div class="timeline-desc">1조 출발 후 3~5분 간격으로 2·3조 출발</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-time">17:00</div>
-                <div class="timeline-title">Goal-In 미니축구</div>
-                <div class="timeline-desc">조별 Activity 진행</div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-time">18:00 ~ 20:00</div>
-                <div class="timeline-title">석식 및 소통</div>
-                <div class="timeline-desc">사진 공유, CEO 인사말씀, 식사, Lucky Draw, 시상</div>
-            </div>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+<div class="timeline-item">
+<div class="timeline-time">15:30</div>
+<div class="timeline-title">광주 사업장 출발</div>
+<div class="timeline-desc">차량 탑승 및 인원 확인</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-time">16:00</div>
+<div class="timeline-title">담양 종합체육관 주차장 도착</div>
+<div class="timeline-desc">집결지 이동 및 조별 정렬</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-time">16:05</div>
+<div class="timeline-title">프로그램 안내</div>
+<div class="timeline-desc">산책코스, 포토미션, Activity 안내</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-time">16:12</div>
+<div class="timeline-title">단체사진 촬영</div>
+<div class="timeline-desc">현수막 활용 전체 기념촬영</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-time">16:20</div>
+<div class="timeline-title">물품 수령</div>
+<div class="timeline-desc">넥쿨러, 생수, 벌레퇴치제 등 수령</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-time">16:30</div>
+<div class="timeline-title">조별 산책 출발</div>
+<div class="timeline-desc">1조 출발 후 3~5분 간격으로 2·3조 출발</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-time">17:00</div>
+<div class="timeline-title">Goal-In 미니축구</div>
+<div class="timeline-desc">조별 Activity 진행</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-time">18:00 ~ 20:00</div>
+<div class="timeline-title">석식 및 소통</div>
+<div class="timeline-desc">사진 공유, CEO 인사말씀, 식사, Lucky Draw, 시상</div>
+</div>
+
+</div>
+</div>
+""", unsafe_allow_html=True)
 
 # =========================
 # Tab 3: 조 편성
