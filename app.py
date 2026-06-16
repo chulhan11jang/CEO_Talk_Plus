@@ -379,7 +379,7 @@ with tab3:
 # =========================
 with tab4:
     sub1, sub2, sub3 = st.tabs([
-        "루트", "포토미션", "Activity"
+        "산책 동선", "포토미션", "Activity"
     ])
 
 with sub1:
