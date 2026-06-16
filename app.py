@@ -600,7 +600,6 @@ with tab5:
 <div class="info-row-last">
     <div class="info-label">🪑 자리배치도</div>
 </div>
-
 <img src="https://raw.githubusercontent.com/chulhan11jang/CEO_Talk_Plus/main/seat.png"
      style="width:100%;
             margin-top:12px;
