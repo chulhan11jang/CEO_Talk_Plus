@@ -82,38 +82,34 @@ def get_photo_items_from_github():
     return photo_items
 
 
-def compress_image(uploaded_file, max_width=1280, quality=70):
-    image = Image.open(uploaded_file)
-    image = ImageOps.exif_transpose(image)
+def compress_image(uploaded_file, max_width=1000, quality=60):
+    try:
+        image = Image.open(uploaded_file)
+        image = ImageOps.exif_transpose(image)
 
-    if image.mode in ("RGBA", "P"):
-        image = image.convert("RGB")
+        if image.mode != "RGB":
+            image = image.convert("RGB")
 
-    width, height = image.size
+        width, height = image.size
 
-    if width > max_width:
-        new_height = int(height * max_width / width)
-        image = image.resize((max_width, new_height))
+        if width > max_width:
+            new_height = int(height * max_width / width)
+            image = image.resize((max_width, new_height))
 
-    buffer = BytesIO()
-    image.save(buffer, format="JPEG", quality=quality, optimize=True)
+        buffer = BytesIO()
+        image.save(
+            buffer,
+            format="JPEG",
+            quality=quality,
+            optimize=True,
+            progressive=True
+        )
 
-    return buffer.getvalue()
-    image = ImageOps.exif_transpose(image)
+        return buffer.getvalue()
 
-    if image.mode in ("RGBA", "P"):
-        image = image.convert("RGB")
-
-    width, height = image.size
-
-    if width > max_width:
-        new_height = int(height * max_width / width)
-        image = image.resize((max_width, new_height))
-
-    buffer = BytesIO()
-    image.save(buffer, format="JPEG", quality=quality, optimize=True)
-
-    return buffer.getvalue()
+    except Exception as e:
+        st.error(f"사진 변환 중 오류가 발생했습니다: {e}")
+        return None
 # =========================
 # CSS
 # =========================
