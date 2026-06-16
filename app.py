@@ -572,7 +572,13 @@ with tab5:
     st.markdown("""
 <div class="card">
 
-🍽 <b>식당</b> : 한상근대통밥집 (담양군 월산면 담장로 113)
+<div style="display:flex;">
+    <div style="width:70px;">🍽 식당</div>
+    <div>
+        한상근대통밥집<br>
+        (담양군 월산면 담장로 113)
+    </div>
+</div>
 
 🍴 <b>메뉴</b> : 죽계찜, 떡갈비, 돼지갈비, 홍어무침
 
