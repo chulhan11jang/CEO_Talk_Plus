@@ -602,7 +602,7 @@ with tab5:
 </div>
 <img src="https://raw.githubusercontent.com/chulhan11jang/CEO_Talk_Plus/main/seat.png"
      style="width:100%;
-            margin-top:12px;
+            margin-top:4px;
             border-radius:12px;
             border:1px solid #E7E7E7;">
 
