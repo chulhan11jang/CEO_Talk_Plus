@@ -519,7 +519,7 @@ with sub2:
 
     photo_items = get_photo_items_from_github()
 
-        if photo_items:
+    if photo_items:
         gallery_html = """
 <style>
 .photo-modal {
