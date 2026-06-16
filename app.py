@@ -415,39 +415,55 @@ CEO 및 리더들과 함께 걸으며<br>
 """, unsafe_allow_html=True)
 
 with sub2:
-    st.markdown("""
-<div class="card">
-<h3>포토미션</h3>
-<p><b>주제: Enable the Next를 표현하는 사진</b></p>
-<p>
-조별로 산책 중 모빌리티솔루션의 미래, 도전, One Team의 의미가 드러나는 장면을 사진으로 남겨주세요.
-</p>
-<ul>
-<li>사진 업로드 시 이름과 한 줄 소감을 함께 작성해 주세요.</li>
-<li>업로드된 사진은 아래 갤러리에 표시됩니다.</li>
-<li>사진을 누르면 새 창에서 크게 볼 수 있습니다.</li>
-</ul>
-</div>
-""", unsafe_allow_html=True)
 
-    uploader_name = st.text_input("이름을 입력해 주세요")
-    photo_comment = st.text_input("사진에 대한 한 줄 소감을 작성해 주세요")
+    st.markdown("""
+    <div class="card">
+    <h3>포토미션</h3>
+
+    <p><b>주제 : Enable the Next를 표현하는 사진</b></p>
+
+    <p>
+    조별로 산책 중 모빌리티솔루션의 미래, 도전,
+    One Team의 의미가 드러나는 장면을 사진으로 남겨주세요.
+    </p>
+
+    <ul>
+        <li>사진 업로드 시 이름과 한 줄 소감을 작성해 주세요.</li>
+        <li>업로드된 사진은 모든 참가자가 함께 볼 수 있습니다.</li>
+        <li>자연스러운 분위기와 메시지가 드러나는 사진을 권장합니다.</li>
+    </ul>
+
+    </div>
+    """, unsafe_allow_html=True)
+
+
+    uploader_name = st.text_input("이름")
+
+    photo_comment = st.text_input("한 줄 소감")
 
     uploaded_photo = st.file_uploader(
-        "사진을 업로드해 주세요",
+        "사진 업로드",
         type=["jpg", "jpeg", "png"]
     )
 
     if uploaded_photo is not None:
+
         if st.button("사진 업로드하기"):
+
             if not uploader_name.strip():
                 st.warning("이름을 입력해 주세요.")
+
             elif not photo_comment.strip():
-                st.warning("한 줄 소감을 입력해 주세요.")
+                st.warning("소감을 입력해 주세요.")
+
             else:
-                ext = uploaded_photo.name.split(".")[-1].lower()
+
+                ext = uploaded_photo.name.split(".")[-1]
+
                 photo_id = f"{int(time.time())}_{uuid.uuid4().hex[:8]}"
+
                 photo_filename = f"{photo_id}.{ext}"
+
                 meta_filename = f"{photo_id}.json"
 
                 photo_success = upload_file_to_github(
@@ -457,116 +473,72 @@ with sub2:
                 )
 
                 metadata = {
-                    "uploader": uploader_name.strip(),
-                    "comment": photo_comment.strip()
+                    "uploader": uploader_name,
+                    "comment": photo_comment
                 }
 
                 meta_success = upload_file_to_github(
-                    json.dumps(metadata, ensure_ascii=False).encode("utf-8"),
+                    json.dumps(
+                        metadata,
+                        ensure_ascii=False
+                    ).encode("utf-8"),
                     f"photos/{meta_filename}",
                     f"Upload metadata {meta_filename}"
                 )
 
                 if photo_success and meta_success:
-                    st.success("사진이 업로드되었습니다.")
+                    st.success("업로드 완료")
                     st.rerun()
+
                 else:
-                    st.error("업로드에 실패했습니다. 관리자에게 문의해 주세요.")
+                    st.error("업로드 실패")
+
 
     st.markdown("### 📷 업로드된 사진")
 
     photo_items = get_photo_items_from_github()
 
-       if photo_items:
-        gallery_html = """
-<style>
-.photo-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 8px;
-}
-.photo-card img {
-width: 100%;
-aspect-ratio: 1 / 1;
-object-fit: cover;
-border-radius: 10px;
-}
-.lightbox {
-display: none;
-position: fixed;
-z-index: 9999;
-left: 0;
-top: 0;
-width: 100%;
-height: 100%;
-background: rgba(0,0,0,0.65);
-padding: 40px 18px;
-box-sizing: border-box;
-overflow-y: auto;
-}
-.lightbox:target {
-display: block;
-}
-.lightbox-content {
-background: white;
-border-radius: 20px;
-padding: 16px;
-max-width: 520px;
-margin: 0 auto;
-}
-.lightbox-content img {
-width: 100%;
-border-radius: 16px;
-margin-bottom: 16px;
-}
-.close-btn {
-float: right;
-font-size: 28px;
-font-weight: bold;
-text-decoration: none;
-color: #111827;
-}
-.uploader-name {
-font-size: 24px;
-font-weight: 800;
-margin-top: 8px;
-}
-.comment {
-font-size: 18px;
-margin-top: 10px;
-line-height: 1.5;
-}
-</style>
+    if photo_items:
 
-<div id="gallery"></div>
-<div class="photo-grid">
-"""
+        cols = st.columns(3)
 
         for idx, item in enumerate(reversed(photo_items)):
-            modal_id = f"photo_{idx}"
 
-            gallery_html += f"""
-<div class="photo-card">
-<a href="#{modal_id}">
-<img src="{item['image_url']}">
-</a>
-</div>
+            with cols[idx % 3]:
 
-<div id="{modal_id}" class="lightbox">
-<div class="lightbox-content">
-<a href="#gallery" class="close-btn">×</a>
-<img src="{item['image_url']}">
-<div class="uploader-name">👤 {item['uploader']}</div>
-<div class="comment">{item['comment']}</div>
-</div>
-</div>
-"""
+                st.image(
+                    item["image_url"],
+                    use_container_width=True
+                )
 
-        gallery_html += "</div>"
+                if st.button(
+                    "보기",
+                    key=f"photo_{idx}"
+                ):
+                    st.session_state["selected_photo"] = item
 
-        st.markdown(gallery_html, unsafe_allow_html=True)
+
+        if "selected_photo" in st.session_state:
+
+            selected = st.session_state["selected_photo"]
+
+            st.markdown("---")
+
+            st.image(
+                selected["image_url"],
+                use_container_width=True
+            )
+
+            st.markdown(
+                f"### 👤 {selected['uploader']}"
+            )
+
+            st.info(
+                selected["comment"]
+            )
 
     else:
+
         st.info("아직 업로드된 사진이 없습니다.")
         
     with sub3:
