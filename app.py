@@ -143,6 +143,8 @@ st.markdown("""
     padding: 22px;
     margin-bottom: 16px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+
+    color: #1F2937 !important;
 }
 
 .info-row {
