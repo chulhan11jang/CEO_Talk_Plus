@@ -588,9 +588,12 @@ with tab5:
     )
 
 
-st.markdown("---")
-
-st.caption(
-    """CEO Talk Plus · Mobility Solution
-문의 : 장철한 선임 (010-3476-6176)"""
+st.markdown(
+    """
+    <div style="color:#888888; font-size:0.85rem;">
+    CEO Talk Plus · Mobility Solution<br>
+    문의 : 장철한 선임 (010-3476-6176)
+    </div>
+    """,
+    unsafe_allow_html=True
 )
