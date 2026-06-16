@@ -425,7 +425,7 @@ with sub2:
 <ul>
 <li>사진 업로드 시 이름과 한 줄 소감을 함께 작성해 주세요.</li>
 <li>업로드된 사진은 아래 갤러리에 표시됩니다.</li>
-<li>사진을 크게 보고 싶으면 '크게 보기' 버튼을 눌러주세요.</li>
+<li>사진을 누르면 새 창에서 크게 볼 수 있습니다.</li>
 </ul>
 </div>
 """, unsafe_allow_html=True)
@@ -511,6 +511,7 @@ border-radius: 10px;
 
     else:
         st.info("아직 업로드된 사진이 없습니다.")
+        
     with sub3:
         st.markdown("""
         <div class="card">
