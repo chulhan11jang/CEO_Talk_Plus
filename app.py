@@ -557,11 +557,16 @@ margin-bottom: 14px;
 
 .photo-close {
 float: right;
-font-size: 28px;
+width: 34px;
+height: 34px;
+border-radius: 50%;
+background: #E5E7EB;
+color: #6B7280;
+font-size: 24px;
 font-weight: 800;
 text-decoration: none;
-color: #111827;
-line-height: 1;
+line-height: 34px;
+text-align: center;
 }
 
 .photo-name {
@@ -592,8 +597,19 @@ width:100%;
         for idx, item in enumerate(reversed(photo_items)):
             modal_id = f"photo_{idx}"
             image_url = item["image_url"]
-            uploader = html.escape(item.get("uploader", "작성자 미입력"))
-            comment = html.escape(item.get("comment", "소감 미입력"))
+            uploader_raw = item.get("uploader", "")
+            comment_raw = item.get("comment", "")
+
+            uploader = html.escape(uploader_raw) if uploader_raw not in ["작성자 미입력", ""] else ""
+            comment = html.escape(comment_raw) if comment_raw not in ["소감 미입력", ""] else ""
+
+            info_html = ""
+
+            if uploader:
+                info_html += f'<div class="photo-name">👤 {uploader}</div>'
+
+            if comment:
+                info_html += f'<div class="photo-comment">{comment}</div>'
 
             gallery_html += f"""
 <div style="
@@ -620,8 +636,7 @@ display:block;
 <div class="photo-modal-card">
 <a href="#gallery" class="photo-close">×</a>
 <img src="{image_url}">
-<div class="photo-name">👤 {uploader}</div>
-<div class="photo-comment">{comment}</div>
+{info_html}
 </div>
 </div>
 """
