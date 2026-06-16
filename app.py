@@ -292,15 +292,15 @@ with tab3:
     }
 
     for group, members in groups.items():
-    with st.expander(group):
+        with st.expander(group):
 
-        first_line = " · ".join(members[:6])
-        second_line = " · ".join(members[6:])
+            first_line = " · ".join(members[:6])
+            second_line = " · ".join(members[6:])
 
-        st.markdown(
-            f"{first_line}<br><br>{second_line}",
-            unsafe_allow_html=True
-        )
+            st.markdown(
+                f"{first_line}<br><br>{second_line}",
+                unsafe_allow_html=True
+            )
 
 
 # =========================
