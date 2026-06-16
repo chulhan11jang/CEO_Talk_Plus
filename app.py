@@ -291,7 +291,7 @@ with tab3:
         "3조": ["이동훈", "유인수", "장승우", "장용재", "박무룡", "유기주", "유선수", "이영화", "전희진", "정재희", "조성재"],
     }
 
-for group, members in groups.items():
+    for group, members in groups.items():
     with st.expander(group):
 
         first_line = " · ".join(members[:6])
