@@ -524,15 +524,20 @@ with sub2:
 <style>
 .photo-grid {
 display: grid;
-grid-template-columns: repeat(3, minmax(0, 1fr));
+grid-template-columns: repeat(3, 1fr);
 gap: 8px;
 }
 
+.thumb-box {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 10px;
+
 .photo-thumb {
 width: 100%;
-height: 105px;
+height: 100px;
 object-fit: cover;
-border-radius: 10px;
 display: block;
 }
 
@@ -610,9 +615,12 @@ margin-top: 8px;
             comment = html.escape(item.get("comment", "소감 미입력"))
 
             gallery_html += f"""
-<a href="#{modal_id}">
-<img class="photo-thumb" src="{image_url}">
-</a>
+<div class="thumb-box">
+    <a href="#{modal_id}">
+        <img class="photo-thumb" src="{image_url}">
+    </a>
+</div>
+"""
 
 <div id="{modal_id}" class="photo-modal">
 <div class="photo-modal-card">
