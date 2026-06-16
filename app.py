@@ -570,23 +570,22 @@ with sub3:
 with tab5:
     st.markdown("""
     <div class="card">
-        <h3>석식 장소 안내</h3>
-        <p><b>장소:</b> 한상근대통밥집</p>
-        <p><b>진행:</b><br>
-        오프닝 · 포토미션 사진 공유 · CEO 인사말씀 및 건배사 · 식사 · Lucky Draw · Activity 우수 조 시상
-        </p>
-        <p><b>현수막 문구:</b><br>
-        세상을 움직이는 모빌리티 혁신의 중심<br>
-        Solution & Value Creator for future Mobility
-        </p>
-    </div>
-
-    <div class="card">
-        <h3>운영 문의</h3>
-        <p>인재육성팀 장철한</p>
-        <p class="small">비상 연락처는 필요 시 업데이트 예정</p>
+    <h2>🍽 식당 안내</h2>
+    <b>식당</b><br>
+    한상근대통밥집<br>
+    (담양군 월산면 담장로 113)
+    <br><br>
+    <b>메뉴</b><br>
+    죽계찜 · 떡갈비 · 돼지갈비 · 홍어무침
+    <br><br>
+    <h2>🪑 자리배치도</h2>
     </div>
     """, unsafe_allow_html=True)
+
+    st.image(
+        "https://raw.githubusercontent.com/chulhan11jang/CEO_Talk_Plus/main/seat.png",
+        use_container_width=True
+    )
 
 
 st.markdown("---")
