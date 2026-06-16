@@ -586,9 +586,13 @@ with tab5:
 
 <div class="info-row">
     <div class="info-label">🍴 메뉴</div>
-    <div class="small" style="text-align:right;">
-        죽계찜 · 떡갈비 · 돼지갈비 · 홍어무침
-    </div>
+    <div style="
+    text-align:right;
+    font-weight:700;
+    color:#1F2937;
+">
+    죽계찜 · 떡갈비 · 돼지갈비 · 홍어무침
+</div>
 </div>
 
 <div class="info-row-last">
