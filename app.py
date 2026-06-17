@@ -299,7 +299,7 @@ st.markdown("""
     <p><b>CEO와 함께하는 Talk Plus, 소통에 의미를 더하다</b></p>
     <p>
     CEO와 리더 간 직접적인 소통을 통해<br>
-    조직의 방향성과 생각을 공유하는 자리
+    조직의 방향성과 생각을 공유하는 자리입니다.
     </p>
 </div>
 """, unsafe_allow_html=True)
