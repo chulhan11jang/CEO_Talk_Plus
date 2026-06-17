@@ -665,9 +665,9 @@ with sub3:
 <b>⚽ 목표 달성 'Goal-In'</b><br>
 
 <ul>
-<li>조별로 진행되는 가벼운 축구 게임입니다.</li>
+<li>조별로 진행되는 가벼운 <span style="color:#DC2626; font-weight:700;">축구 게임</span>입니다.</li>
 <li>조원 모두가 <span style="color:#DC2626; font-weight:700;">한 번의 기회</span>를 가지며<br>
-    '골인' 성공 개수로 점수를 획득합니다.</li>
+    <span style="color:#DC2626; font-weight:700;">'골인' 성공 개수</span>로 점수를 획득합니다.</li>
 <li>우리 조가 많은 '골인'을 할 수 있도록<br>
     열렬히 응원하며 목표에 도전합니다.</li>
 </ul>
@@ -675,17 +675,17 @@ with sub3:
 <b>🎯 Game Tip</b><br>
 
 <ul>
-<li>발 안쪽의 넓은 부위로 차면 보다 정확하게<br>
+<li><span style="color:#DC2626; font-weight:700;">발 안쪽의 넓은 부위</span>로 차면 보다 정확하게<br>
     찰 수 있습니다.</li>
-<li>너무 강하게 차기보다 적당한 힘으로<br>
+<li>너무 강하게 차기보다 <span style="color:#DC2626; font-weight:700;">적당한 힘</span>으로<br>
     정확하게 차는 것이 중요합니다.</li>
-<li>공을 끝까지 바라보며 차보세요.</li>
+<li><span style="color:#DC2626; font-weight:700;">공을 끝까지 바라보며</span> 차보세요.</li>
 </ul>
 
 <b>😊 참고해 주세요</b><br>
 
-<li>본 활동은 정확도와 집중력이 필요합니다.</li>
-<li>누구나 한 번에 성공하기는 어렵습니다.</li>
+<li>본 활동은 <span style="color:#DC2626; font-weight:700;">정확도</span>와 <span style="color:#DC2626; font-weight:700;">집중력</span>이 필요합니다.</li>
+<li><span style="color:#DC2626; font-weight:700;">누구나 한 번에 성공하기는 어렵습니다.</span></li>
 <li>성공 여부와 관계없이 조원들과 함께 도전하고<br>
     응원하는 시간을 즐겨주시기 바랍니다.</li>
 
