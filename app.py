@@ -446,10 +446,10 @@ CEO 및 리더들과 함께 걸으며<br>
 
     st.markdown("""
 <div class="card">
-<b>출발지</b> : 담양 종합체육관 주차장<br>
-<b>집결지</b> : 죽녹원 입구<br>
+<b>하차지점</b> : 담양 종합체육관 주차장<br>
+<b>집결지</b> : 주차장 인근<br>
 <b>단체사진 촬영</b> : 죽녹원 입구 인근<br>
-<b>하차지점</b> : 주차장 인근<br>
+<b>출발지</b> : 죽녹원 입구<br>
 <b>Post</b> : 산책 중간 Activity 진행 지점
 </div>
 """, unsafe_allow_html=True)
