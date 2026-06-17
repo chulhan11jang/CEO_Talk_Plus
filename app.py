@@ -740,7 +740,7 @@ st.markdown("""
 CEO Talk Plus · Mobility Solution<br>
 문의 :
 <a href="tel:01034766176"
-   style="color:#888888; text-decoration:none;">
+   style="color:#0EA5A4; text-decoration:none; font-weight:600;">
 장철한 선임 (010-3476-6176)
 </a>
 </div>
