@@ -443,7 +443,7 @@ CEO 및 리더들과 함께 걸으며<br>
 """, unsafe_allow_html=True)
 
     st.image(
-        "https://github.com/chulhan11jang/CEO_Talk_Plus/blob/main/route.png",
+        "https://raw.githubusercontent.com/chulhan11jang/CEO_Talk_Plus/main/route.png",
         use_container_width=True
     )
 
