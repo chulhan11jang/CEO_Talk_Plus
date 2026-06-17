@@ -401,29 +401,24 @@ with tab2:
 with tab3:
     groups = {
         "1조": ["유병국", "남형기", "김민규", "김형근", "김웅", "박창혁", "신기수", "장성덕", "조정민", "최낙주"],
-        "2조": ["김진호", "강용호", "백남산", "김성수", "문종인", "박갑동", "박석", "오영춘", "이재광", "정재희", "최영민"],
+        "2조": ["김진호", "강용호", "백남산", "김성수", "김성훈", "문종인", "박갑동", "박석", "오영춘", "이재광", "정재희", "최영민"],
         "3조": ["이동훈", "유인수", "장승우", "장용재", "김성훈", "박무룡", "유기주", "유선수", "전희진", "조성재"],
     }
 
     for group, members in groups.items():
 
-    st.markdown(
-        f"<div style='font-size:20px; font-weight:700; color:#000000; margin-bottom:10px;'>{group}</div>",
-        unsafe_allow_html=True
-    )
+        first_line = " · ".join(members[:6])
+        second_line = " · ".join(members[6:])
 
-    first_line = " · ".join(members[:6])
-    second_line = " · ".join(members[6:])
-
-    st.markdown(
-        f"""
-        <div class="card">
-        {first_line}<br><br>{second_line}
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-
+        st.markdown(
+            f"""
+<div class="card">
+<b style="font-size:20px; color:#000000;">{group}</b><br><br>
+{first_line}<br><br>{second_line}
+</div>
+""",
+            unsafe_allow_html=True
+        )
 
 # =========================
 # Tab 4: 죽녹원
