@@ -406,15 +406,23 @@ with tab3:
     }
 
     for group, members in groups.items():
-        with st.expander(group):
 
-            first_line = " · ".join(members[:6])
-            second_line = " · ".join(members[6:])
+    st.markdown(
+        f"<div style='font-size:20px; font-weight:700; color:#000000; margin-bottom:10px;'>{group}</div>",
+        unsafe_allow_html=True
+    )
 
-            st.markdown(
-                f"{first_line}<br><br>{second_line}",
-                unsafe_allow_html=True
-            )
+    first_line = " · ".join(members[:6])
+    second_line = " · ".join(members[6:])
+
+    st.markdown(
+        f"""
+        <div class="card">
+        {first_line}<br><br>{second_line}
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 
 # =========================
