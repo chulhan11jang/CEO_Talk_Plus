@@ -467,7 +467,7 @@ with sub2:
 <b>📸 오늘 함께한 순간을 기록해 주세요.</b><br><br>
 
 함께 걷는 모습, 소통의 모습 등<br>
-오늘의 현장감과 즐거운 분위기가 담긴 사진을<br>
+<span style="color:#DC2626; font-weight:700;">오늘의 현장감</span>과 <span style="color:#DC2626; font-weight:700;">즐거운 분위기</span>가 담긴 사진을<br>
 자유롭게 업로드해 주시기 바랍니다.<br><br>
 
 사진을 업로드해 주신 분들 중<br>
