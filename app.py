@@ -434,12 +434,12 @@ with sub1:
 <b>🌿 함께 걸으며</b><br><br>
 
 CEO 및 리더들과 함께 걸으며<br>
-자유롭게 생각을 나누는 시간입니다.<br><br>
+<span style="color:#DC2626; font-weight:700;">자유롭게 생각을 나누는 시간</span>입니다.<br><br>
 
 사업의 방향,<br>
 조직 운영에 대한 고민,<br>
 리더로서의 경험과 생각 등<br>
-평상 시 함께 나누고 싶은 주제 중심으로<br>
+평상 시 <span style="color:#DC2626; font-weight:700;">함께 나누고 싶은 주제</span> 중심으로<br>
 자유롭게 소통해 주시기 바랍니다.
 
 </div>
