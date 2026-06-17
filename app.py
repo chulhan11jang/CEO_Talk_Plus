@@ -345,7 +345,7 @@ with tab2:
 
 <div class="timeline-item">
 <div class="timeline-time">15:30</div>
-<div class="timeline-title">광주 사업장 출발</div>
+<div class="timeline-title">광주 공장 출발</div>
 <div class="timeline-desc">차량 탑승 및 인원 확인</div>
 </div>
 
@@ -356,21 +356,9 @@ with tab2:
 </div>
 
 <div class="timeline-item">
-<div class="timeline-time">16:05</div>
+<div class="timeline-time">16:10</div>
 <div class="timeline-title">프로그램 안내</div>
-<div class="timeline-desc">산책코스, 포토미션, Activity 안내</div>
-</div>
-
-<div class="timeline-item">
-<div class="timeline-time">16:12</div>
-<div class="timeline-title">단체사진 촬영</div>
-<div class="timeline-desc">현수막 활용 전체 기념촬영</div>
-</div>
-
-<div class="timeline-item">
-<div class="timeline-time">16:20</div>
-<div class="timeline-title">물품 수령</div>
-<div class="timeline-desc">넥쿨러, 생수, 벌레퇴치제 등 수령</div>
+<div class="timeline-desc">세부내용 설명 및 단체사진 촬영</div>
 </div>
 
 <div class="timeline-item">
@@ -381,14 +369,20 @@ with tab2:
 
 <div class="timeline-item">
 <div class="timeline-time">17:00</div>
-<div class="timeline-title">Goal-In 미니축구</div>
-<div class="timeline-desc">조별 Activity 진행</div>
+<div class="timeline-title">Post Activity</div>
+<div class="timeline-desc">목표달성 'Goal-In' 활동 진행</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-time">17:10</div>
+<div class="timeline-title">조별 산책 출발</div>
+<div class="timeline-desc">Activity 종료 후 1조부터 순차적 출발</div>
 </div>
 
 <div class="timeline-item">
 <div class="timeline-time">18:00 ~ 20:00</div>
 <div class="timeline-title">석식 및 소통</div>
-<div class="timeline-desc">사진 공유, CEO 인사말씀, 식사, Lucky Draw, 시상</div>
+<div class="timeline-desc">식사 및 행사 진행</div>
 </div>
 
 </div>
