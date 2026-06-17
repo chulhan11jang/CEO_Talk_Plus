@@ -738,10 +738,10 @@ st.markdown("---")
 st.markdown("""
 <div style="font-size:0.85rem; color:#888888;">
 CEO Talk Plus · Mobility Solution<br>
-문의 :
+문의 : 장철한 선임 
 <a href="tel:01034766176"
    style="color:#0EA5A4; text-decoration:none; font-weight:600;">
-장철한 선임 (010-3476-6176)
+010-3476-6176
 </a>
 </div>
 """, unsafe_allow_html=True)
