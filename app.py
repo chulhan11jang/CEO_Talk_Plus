@@ -334,23 +334,14 @@ with tab1:
 </div>
 
 <div style="
-
 margin-top:12px;
-
 padding-top:12px;
-
 border-top:1px solid #EEEEEE;
-
 font-size:14px;
-
 color:#D97706;
-
 font-weight:600;
-
 ">
-
 ☂️ 우천에 대비하여 우산을 지참해 주시기 바랍니다.
-
 </div>
 """, unsafe_allow_html=True)
 
