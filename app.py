@@ -326,11 +326,11 @@ with tab1:
 </div>
 <div class="info-row">
 <div class="info-label">📍 탑승 위치</div>
-<div class="info-value-normal">A동 정문 앞</div>
+<div class="info-value-normal">정문 앞(ID카드 태깅 필요)</div>
 </div>
 <div class="info-row-last">
 <div class="info-label">⏰ 집결 시간</div>
-<div class="info-value">15:25까지 탑승 완료</div>
+<div class="info-value">15:25까지 탑승 완료 (시간 엄수 必)</div>
 </div>
 </div>
 """, unsafe_allow_html=True)
