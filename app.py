@@ -330,7 +330,7 @@ with tab1:
 </div>
 <div class="info-row-last">
 <div class="info-label">⏰ 집결 시간</div>
-<div class="info-value">15:25까지 탑승 완료 (시간 엄수 必)</div>
+<div class="info-value"><span style="color:#DC2626; font-weight:700;">15:25</span>까지 탑승 완료</div>
 </div>
 </div>
 """, unsafe_allow_html=True)
