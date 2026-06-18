@@ -332,6 +332,25 @@ with tab1:
 <div class="info-label">⏰ 집결 시간</div>
 <div class="info-value"><span style="color:#DC2626; font-weight:700;">15:25</span>까지 탑승 완료</div>
 </div>
+
+<div style="
+
+margin-top:12px;
+
+padding-top:12px;
+
+border-top:1px solid #EEEEEE;
+
+font-size:14px;
+
+color:#D97706;
+
+font-weight:600;
+
+">
+
+☂️ 우천에 대비하여 우산을 지참해 주시기 바랍니다.
+
 </div>
 """, unsafe_allow_html=True)
 
