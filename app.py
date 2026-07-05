@@ -355,13 +355,13 @@ with tab2:
 
 <div class="timeline-item">
 <div class="timeline-time">15:30</div>
-<div class="timeline-title">광주 공장 출발</div>
+<div class="timeline-title">구미 공장 출발</div>
 <div class="timeline-desc">차량 탑승 및 인원 확인</div>
 </div>
 
 <div class="timeline-item">
 <div class="timeline-time">16:00</div>
-<div class="timeline-title">담양 종합체육관 주차장 도착</div>
+<div class="timeline-title">금오산 도립공원 주차장 도착</div>
 <div class="timeline-desc">집결지 이동 및 조별 정렬</div>
 </div>
 
@@ -374,19 +374,19 @@ with tab2:
 <div class="timeline-item">
 <div class="timeline-time">16:30</div>
 <div class="timeline-title">조별 산책 출발</div>
-<div class="timeline-desc">1조 출발 후 3~5분 간격으로 2·3조 출발</div>
+<div class="timeline-desc">1조 출발 후 3~5분 간격으로 다음 조 출발</div>
 </div>
 
 <div class="timeline-item">
-<div class="timeline-time">17:00</div>
-<div class="timeline-title">Post Activity</div>
-<div class="timeline-desc">목표달성 'Goal-In' 활동 진행</div>
+<div class="timeline-time">16:55</div>
+<div class="timeline-title">뚝방길 벤치</div>
+<div class="timeline-desc">잠시 휴식 후 이동</div>
 </div>
 
 <div class="timeline-item">
-<div class="timeline-time">17:10</div>
-<div class="timeline-title">조별 산책 출발</div>
-<div class="timeline-desc">Activity 종료 후 1조부터 순차적 출발</div>
+<div class="timeline-time">17:35</div>
+<div class="timeline-title">Activity 진행</div>
+<div class="timeline-desc">'목표달성 Shot' Activity 진행</div>
 </div>
 
 <div class="timeline-item">
