@@ -279,7 +279,7 @@ st.markdown("""
 # =========================
 st.markdown("""
 <div class="hero-container">
-<img src="https://raw.githubusercontent.com/chulhan11jang/CEO_Talk_Plus/main/gumi.jpeg">
+<img src="https://raw.githubusercontent.com/chulhan11jang/CEO_Talk_Plus/main/gumi.jpg">
 <div class="hero-overlay"></div>
 <div class="hero-text">
     <div class="hero-title">CEO Talk Plus</div>
