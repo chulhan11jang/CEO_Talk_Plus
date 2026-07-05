@@ -712,10 +712,10 @@ with tab5:
     <div class="info-label">🍽 식당</div>
     <div style="text-align:right;">
     <div style="font-weight:700; color:#1F2937;">
-        한상근대통밥집
+        버드나무 백숙
     </div>
     <div class="small">
-        (담양군 월산면 담장로 113)
+        (구미시 공원로26)
     </div>
 </div>
 </div>
@@ -727,7 +727,7 @@ with tab5:
     font-weight:700;
     color:#1F2937;
 ">
-    죽계찜 · 떡갈비 · 돼지갈비 · 홍어무침
+    능이한방백숙 · 파전 · 도토리묵
 </div>
 </div>
 
