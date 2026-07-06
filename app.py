@@ -309,7 +309,7 @@ st.markdown("""
 # Main Tabs
 # =========================
 tab1, tab2, tab3, tab4, tab5 = st.tabs([
-    "집결 정보", "일정", "조 편성", "죽녹원", "석식"
+    "집결 정보", "일정", "조 편성", "금오산", "석식"
 ])
 
 
@@ -425,7 +425,7 @@ with tab3:
         )
 
 # =========================
-# Tab 4: 죽녹원
+# Tab 4: 금오산
 # =========================
 with tab4:
     sub1, sub2 = st.tabs([
@@ -481,20 +481,19 @@ with sub2:
 <b>🎯 Game Tip</b><br>
 
 <ul>
-<li><span style="color:#DC2626; font-weight:700;">발 안쪽의 넓은 부위</span>로 차면 보다 정확하게<br>
-    찰 수 있습니다.</li>
-<li>너무 강하게 차기보다 <span style="color:#DC2626; font-weight:700;">적당한 힘</span>으로<br>
-    정확하게 차는 것이 중요합니다.</li>
-<li><span style="color:#DC2626; font-weight:700;">공을 끝까지 바라보며</span> 차보세요.</li>
+<li>통 바로 앞이 아닌 <span style="color:#DC2626; font-weight:700;">통 안쪽 중심</span>을 목표로 던져보세요.</li>
+<li>화살을 <span style="color:#DC2626; font-weight:700;">손에서 자연스럽게 놓는다</span>는 느낌으로 던지는 것이 좋습니다.</li>
+<li>힘보다 <span style="color:#DC2626; font-weight:700;">일정한 자세와 방향</span>이 성공률을 높입니다.</li>
 </ul>
 
 <b>😊 참고해 주세요</b><br>
 
-<li>투호는 <span style="color:#DC2626; font-weight:700;">생각보다 쉽지 않은 게임</span>입니다.</li>
-<li>성공을 위해서는 <span style="color:#DC2626; font-weight:700;">정확도</span>와 <span style="color:#DC2626; font-weight:700;">집중력</span>이 필요합니다.</li>
-<li><span style="color:#DC2626; font-weight:700;">누구나 한 번에 성공하기는 어렵습니다.</span></li>
-<li>성공 여부와 관계없이 조원들과 함께 도전하고<br>
-    응원하는 시간을 즐겨주시기 바랍니다.</li>
+<ul>
+<li>투호는 <span style="color:#DC2626; font-weight:700;">생각보다 성공하기 어려운 게임</span>입니다.</li>
+<li><span style="color:#DC2626; font-weight:700;">한 번만 성공해도 충분히 대단한 결과</span>이니 부담 없이 즐겨주세요.</li>
+<li>조원의 도전에는 아낌없는 응원을, <br>
+    성공에는 큰 박수로 함께 즐겨주시기 바랍니다.</li>
+</ul>
 
 </div>
 """, unsafe_allow_html=True)
