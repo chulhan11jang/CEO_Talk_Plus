@@ -468,13 +468,13 @@ with sub2:
 
     st.markdown("""
 <div class="card">
-<b>⚽ 목표 달성 'Goal-In'</b><br>
+<b>🏹 목표 달성 Shot</b><br>
 
 <ul>
-<li>조별로 진행되는 가벼운 <span style="color:#DC2626; font-weight:700;">축구 게임</span>입니다.</li>
-<li>조원 모두가 <span style="color:#DC2626; font-weight:700;">한 번의 기회</span>를 가지며<br>
-    <span style="color:#DC2626; font-weight:700;">'골인' 성공 개수</span>로 점수를 획득합니다.</li>
-<li>우리 조가 많은 '골인'을 할 수 있도록<br>
+<li>조별로 진행되는 가벼운 <span style="color:#DC2626; font-weight:700;">투호 게임</span>입니다.</li>
+<li>조원 모두가 <span style="color:#DC2626; font-weight:700;">5번의 기회</span>를 가지며<br>
+    <span style="color:#DC2626; font-weight:700;">투호의 성공 개수</span>로 점수를 획득합니다.</li>
+<li>우리 조가 많은 성공을 할 수 있도록<br>
     열렬히 응원하며 목표에 도전합니다.</li>
 </ul>
 
@@ -490,7 +490,8 @@ with sub2:
 
 <b>😊 참고해 주세요</b><br>
 
-<li>본 활동은 <span style="color:#DC2626; font-weight:700;">정확도</span>와 <span style="color:#DC2626; font-weight:700;">집중력</span>이 필요합니다.</li>
+<li>투호는 <span style="color:#DC2626; font-weight:700;">생각보다 쉽지 않은 게임</span>입니다.</li>
+<li>성공을 위해서는 <span style="color:#DC2626; font-weight:700;">정확도</span>와 <span style="color:#DC2626; font-weight:700;">집중력</span>이 필요합니다.</li>
 <li><span style="color:#DC2626; font-weight:700;">누구나 한 번에 성공하기는 어렵습니다.</span></li>
 <li>성공 여부와 관계없이 조원들과 함께 도전하고<br>
     응원하는 시간을 즐겨주시기 바랍니다.</li>
