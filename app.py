@@ -420,7 +420,7 @@ with tab3:
             f"""
 <div class="card">
 <b style="font-size:20px; color:#000000;">{group}</b><br><br>
-{first_line}<br><br>{second_line}
+{first_line}<br>{second_line}
 </div>
 """,
             unsafe_allow_html=True
