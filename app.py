@@ -480,16 +480,20 @@ with sub2:
 <b>🎯 Game Tip</b><br>
 
 <ul>
-<li>통 바로 앞이 아닌 <span style="color:#DC2626; font-weight:700;">통 안쪽 중심</span>을 목표로 던져보세요.</li>
-<li>화살을 <span style="color:#DC2626; font-weight:700;">손에서 자연스럽게 놓는다</span>는 느낌으로 던지는 것이 좋습니다.</li>
-<li>힘보다 <span style="color:#DC2626; font-weight:700;">일정한 자세와 방향</span>이 성공률을 높입니다.</li>
+<li>통 바로 앞이 아닌 <span style="color:#DC2626; font-weight:700;">통 안쪽 중심</span>을 목표로<br>
+    던져보세요.</li>
+<li>화살을 <span style="color:#DC2626; font-weight:700;">손에서 자연스럽게 놓는다</span>는 느낌으로<br>
+    던지는 것이 좋습니다.</li>
+<li>힘보다 <span style="color:#DC2626; font-weight:700;">일정한 자세와 방향</span>이 성공률을<br>
+    높입니다.</li>
 </ul>
 
 <b>😊 참고해 주세요</b><br>
 
 <ul>
 <li>투호는 <span style="color:#DC2626; font-weight:700;">생각보다 성공하기 어려운 게임</span>입니다.</li>
-<li><span style="color:#DC2626; font-weight:700;">한 번만 성공해도 충분히 대단한 결과</span>이니 부담 없이 즐겨주세요.</li>
+<li><span style="color:#DC2626; font-weight:700;">한 번만 성공해도 충분히 대단한 결과</span>이니<br>
+    부담 없이 즐겨주세요.</li>
 <li>조원의 도전에는 아낌없는 응원을, <br>
     성공에는 큰 박수로 함께 즐겨주시기 바랍니다.</li>
 </ul>
