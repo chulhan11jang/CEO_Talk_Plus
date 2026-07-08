@@ -565,7 +565,7 @@ with tab5:
 <div class="info-row-last">
     <div class="info-label">🪑 자리배치도</div>
 </div>
-<img src="https://raw.githubusercontent.com/chulhan11jang/CEO_Talk_Plus/main/dinner5.png"
+<img src="https://raw.githubusercontent.com/chulhan11jang/CEO_Talk_Plus/main/dinner6.png"
      style="width:100%;
             margin-top:0px;
             border-radius:12px;
@@ -578,7 +578,7 @@ st.markdown("---")
 
 st.markdown("""
 <div style="font-size:0.85rem; color:#888888;">
-CEO Talk Plus · Mobility Solution<br>
+CEO Talk Plus · Package Solution<br>
 문의 : 장철한 선임 
 <a href="tel:01034766176"
    style="color:#0EA5A4; text-decoration:none; font-weight:600;">
