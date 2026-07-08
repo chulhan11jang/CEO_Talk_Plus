@@ -343,19 +343,19 @@ with tab1:
 
 <div class="info-row">
     <div class="info-label">🚌 배차정보</div>
-    <div class="info-value">경북75바5303</div>
+    <div class="info-value">경북75바5311</div>
 </div>
 
 <div class="info-row">
     <div class="info-label">📍 탑승 위치</div>
-    <div class="info-value-normal">4공장 정문 앞 → 1A공장 매점 앞</div>
+    <div class="info-value-normal">2공장 후문 → 2공장 정문</div>
 </div>
 
 <div class="info-row-last">
     <div class="info-label">⏰ 집결 시간</div>
     <div class="info-value">
-        <span style="color:#D32F2F;">4공장 15:25</span> /
-        <span style="color:#D32F2F;">1A공장 15:35</span>
+        <span style="color:#D32F2F;">2공장 후문 15:35</span> /
+        <span style="color:#D32F2F;">2공장 정문 15:35</span>
     </div>
 </div>
 
