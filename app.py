@@ -320,29 +320,56 @@ with tab1:
 
     st.markdown("""
 <div class="card">
+
 <div class="info-row">
-<div class="info-label">🚍 배차 정보</div>
-<div class="info-value">경북75바5302</div><br>
-                        경북75바5302</div>
+    <div class="info-label">🚌 배차정보</div>
+    <div class="info-value">경북75바5302</div>
 </div>
+
 <div class="info-row">
-<div class="info-label">📍 탑승 위치</div>
-<div class="info-value-normal">4공장 정문 앞 → 1A공장 매점 앞</div>
+    <div class="info-label">📍 탑승 위치</div>
+    <div class="info-value-normal">4공장 정문 앞 → 1A공장 매점 앞</div>
 </div>
+
 <div class="info-row-last">
-<div class="info-label">⏰ 집결 시간</div>
-<div class="info-value"><span style="color:#DC2626; font-weight:700;">4공장 : 15시 25분, 1A공장 : 15시 35분</span></div>
+    <div class="info-label">⏰ 집결 시간</div>
+    <div class="info-value">
+        <span style="color:#D32F2F;">4공장 15:25</span> /
+        <span style="color:#D32F2F;">1A공장 15:35</span>
+    </div>
+</div>
+
+<hr style="margin:18px 0; border:none; border-top:2px solid #E5E7EB;">
+
+<div class="info-row">
+    <div class="info-label">🚌 배차정보</div>
+    <div class="info-value">경북75바5303</div>
+</div>
+
+<div class="info-row">
+    <div class="info-label">📍 탑승 위치</div>
+    <div class="info-value-normal">4공장 정문 앞 → 1A공장 매점 앞</div>
+</div>
+
+<div class="info-row-last">
+    <div class="info-label">⏰ 집결 시간</div>
+    <div class="info-value">
+        <span style="color:#D32F2F;">4공장 15:25</span> /
+        <span style="color:#D32F2F;">1A공장 15:35</span>
+    </div>
 </div>
 
 <div style="
-margin-top:12px;
-padding-top:12px;
+margin-top:18px;
+padding-top:14px;
 border-top:1px solid #EEEEEE;
 font-size:14px;
-color:#D97706;
 font-weight:600;
+color:#D97706;
 ">
-☂️ 우천에 대비하여 우산을 지참해 주시기 바랍니다.
+☔ 우천에 대비하여 우산을 지참해 주시기 바랍니다.
+</div>
+
 </div>
 """, unsafe_allow_html=True)
 
