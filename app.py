@@ -354,7 +354,7 @@ with tab1:
 <div class="info-row-last">
     <div class="info-label">⏰ 집결 시간</div>
     <div class="info-value">
-        <span style="color:#D32F2F;">2공장 후문 15:35</span> /
+        <span style="color:#D32F2F;">2공장 후문 </span> /
         <span style="color:#D32F2F;">2공장 정문 15:35</span>
     </div>
 </div>
